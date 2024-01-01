@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Portfolio</title>
+
+    <!--
+    - favicon
+  -->
+    <link
+      rel="shortcut icon"
+      href="./assets/images/logo.ico"
+      type="image/x-icon"
+    />
+
+    <!--
+    - custom css link
+  -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+    <!--
+    - google font link
+  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!--
+    - #MAIN
+  -->
+
+    <main>
+      <!--
+      - #SIDEBAR
+    -->
+
+      <aside class="sidebar" data-sidebar>
+        <div class="sidebar-info">
+          <figure class="avatar-box">
+            <img
+              src="./assets/images/pho.png"
+              alt="Image"
+              width="80"
+            />
+          </figure>
+
+          <div class="info-content">
+            <h1 class="name" title="untoldcoding">Guru Vamsi</h1>
+
+            <p class="title">Web developer</p>
+          </div>
+
+          <button class="info_more-btn" data-sidebar-btn>
+            <span>Show Contacts</span>
+
+            <ion-icon name="chevron-down"></ion-icon>
+          </button>
+        </div>
+
+        <div class="sidebar-info_more">
+          <div class="separator"></div>
+
+          <ul class="contacts-list">
+            <li class="contact-item">
+              <div class="icon-box">
+                <ion-icon name="mail-outline"></ion-icon>
+              </div>
+
+              <div class="contact-info">
+                <p class="contact-title">Email</p>
+
+                <a href="mailto:guruvamsi061@gmail.com" class="contact-link"
+                  >guruvamsi061@gmail.com</a
+                >
+              </div>
+            </li>
+
+            <li class="contact-item">
+              <div class="icon-box">
+                <ion-icon name="phone-portrait-outline"></ion-icon>
+              </div>
+
+              <div class="contact-info">
+                <p class="contact-title">Phone</p>
+
+                <a href="tel:+91 9182329248" class="contact-link"
+                  >+91 9182329248</a
+                >
+              </div>
+            </li>
+
+            <li class="contact-item">
+              <div class="icon-box">
+                <ion-icon name="calendar-outline"></ion-icon>
+              </div>
+
+              <div class="contact-info">
+                <p class="contact-title">Birthday</p>
+
+                <time datetime="1982-06-23">June 29, 2002</time>
+              </div>
+            </li>
+
+            <li class="contact-item">
+              <div class="icon-box">
+                <ion-icon name="location-outline"></ion-icon>
+              </div>
+
+              <div class="contact-info">
+                <p class="contact-title">Location</p>
+
+                <address>Vijayawada, Andhra Pradesh, India</address>
+              </div>
+            </li>
+          </ul>
+
+          <div class="separator"></div>
+
+          <ul class="social-list">
+            <li class="social-item">
+              <a href="https://www.linkedin.com/in/vamsi061" class="social-link" target="_blank">
+                <ion-icon name='logo-linkedin'></ion-icon>
+              </a>
+            </li>
+
+            <li class="social-item">
+              <a href="https://www.instagram.com/guruvamsi.vamsi.5/" class="social-link" target="_blank">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+
+            <li class="social-item">
+              <a href="https://www.facebook.com/guruvamsi.vamsi.5" class="social-link" target="_blank">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            <li class="social-item">
+              <a href="https://github.com/vamsi061" class="social-link" target="_blank">
+                <ion-icon name="logo-github"></ion-icon>
+              </a>
+            </li>
+
+          </ul>
+        </div>
+      </aside>
+
+      <!--
+      - #main-content
+    -->
+
+      <div class="main-content">
+        <!--
+        - #NAVBAR
+      -->
+
+        <nav class="navbar">
+          <ul class="navbar-list">
+            <li class="navbar-item">
+              <button class="navbar-link active" data-nav-link>Portfolio</button>
+            </li>
+
+            <li class="navbar-item">
+              <button class="navbar-link" data-nav-link>Experience</button>
+            </li>
+
+            <li class="navbar-item">
+              <button class="navbar-link" data-nav-link>Education</button>
+            </li>
+
+            <li class="navbar-item">
+              <button class="navbar-link" data-nav-link>Projects</button>
+            </li>
+
+            <li class="navbar-item">
+              <button class="navbar-link" data-nav-link>Contact</button>
+            </li>
+          </ul>
+        </nav>
+
+        <!--
+        - #Portfolio
+      -->
+
+        <article class="Portfolio active" data-page="portfolio">
+          <header style="padding-bottom: 80px;">
+            <h2 class="h2 article-title">Portfolio</h2>
+          </header>
+
+          <section class="about-text">
+            <div class="#">
+              <table>
+                <tr>
+                <th><h3>Hello, I'm &nbsp; &nbsp;</h3></th>
+                  <th><span class="typing-text" style="font-size: 24px; color: rgb(255, 181, 0);">|</span></th>
+              </tr>
+              </table>
+            <p>
+              I am a young and energetic individual trying to shape my career in the trending Technologies and I want to kick-start my career and upgrade my skills according to the organization.
+            </p>
+            </div>
+
+          </section>
+
+          <section class="about-text">
+            <center><a href="./assets/Resume.pdf" class="res_style">Resume</a></center>
+
+          </section>
+
+          <section class="service">
+            
+          </section>
+         
+
+          <div class="modal-container" data-modal-container>
+            <div class="overlay" data-overlay></div>
+
+            <section class="testimonials-modal">
+              <button class="modal-close-btn" data-modal-close-btn>
+                <ion-icon name="close-outline"></ion-icon>
+              </button>
+
+        
+            </section>
+          </div>
+
+          <!--
+          - clients
+        -->
+
+          <section class="clients">
+          </section>
+        </article>
+
+        <!--Experience
+        -->
+
+        <article class="portfolio" data-page="experience">
+          <header>
+            <h2 class="h2 article-title">Experience</h2>
+          </header>
+
+
+          <section class="timeline">
+            <div class="title-wrapper">
+              <div class="icon-box">
+                <ion-icon name="book-outline"></ion-icon>
+              </div>
+
+              <h3 class="h3"></h3>
+            </div>
+
+            <ol class="timeline-list">
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">
+                  Android Developer
+                </h4>
+                <table>
+                  <tr>
+                    <td style="padding-right: 30px;">
+                      <span>            
+                      <li class="contact-item">
+                    <div>
+                      <ion-icon name="calendar-outline"></ion-icon>
+
+                    </div>
+                    <address>2023</address>
+                  <div>
+              </div>
+            </li></span>
+                    </td>
+                    <td><span>            
+                      <li class="contact-item">
+                    <div>
+                      <ion-icon name="location-outline"></ion-icon>
+
+                    </div>
+                    <address>Vijayawada</address>
+                  <div>
+              </div>
+            </li></span></td>
+
+                  </tr>
+                </table>
+
+                
+              
+
+                <p class="timeline-text">
+                  I am excited to contribute to the GDSC community and help my peers learn and grow as Android developers.
+                </p>
+              </li>
+
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">AI-ML Intern</h4>
+
+                <table>
+                  <tr>
+                    <td style="padding-right: 30px;">
+                      <span>            
+                      <li class="contact-item">
+                    <div>
+                      <ion-icon name="calendar-outline"></ion-icon>
+
+                    </div>
+                    <address>2023</address>
+                  <div>
+              </div>
+            </li></span>
+                    </td>
+                    <td><span>            
+                      <li class="contact-item">
+                    <div>
+                      <ion-icon name="location-outline"></ion-icon>
+
+                    </div>
+                    <address>Remote</address>
+                  <div>
+              </div>
+            </li></span></td>
+
+                  </tr>
+                </table>
+
+                <p class="timeline-text">
+                  This internship has equipped me with a solid foundation with various Machine learning algorithms and worked on various ML models like SVM, Random Forest, & AdaBoost.
+                </p>
+              </li>
+
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">
+                  GoogleCloudReady Facilitator Program
+                </h4>
+
+                <table>
+                  <tr>
+                    <td style="padding-right: 30px;">
+                      <span>            
+                      <li class="contact-item">
+                    <div>
+                      <ion-icon name="calendar-outline"></ion-icon>
+
+                    </div>
+                    <address>2022</address>
+                  <div>
+              </div>
+            </li></span>
+                    </td>
+                    <td><span>            
+                      <li class="contact-item">
+                    <div>
+                      <ion-icon name="location-outline"></ion-icon>
+
+                    </div>
+                    <address>Vijayawada</address>
+                  <div>
+              </div>
+            </li></span></td>
+
+                  </tr>
+                </table>
+
+                <p class="timeline-text">
+                   This rigorous program challenged me to learn and apply my knowledge of Google Cloud Platform (GCP) to real-world scenarios.
+                </p>
+              </li>
+            </ol>
+          </section>
+
+
+
+          <section class="service">
+            <h3 class="h3 service-title">Skills</h3>
+
+            <ul class="service-list">
+
+               <li class="service-item">
+                <div class="service-icon-box">
+                  <img
+                    src="./assets/images/icon-dev.svg"
+                    alt="Web development icon"
+                    width="40"
+                  />
+                </div>
+
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Web development</h4>
+
+                  <p class="service-item-text">
+                    Proficiency in Developing the user friendly Responsive websites.
+                  </p>
+                </div>
+              </li>
+
+              <li class="service-item">
+                <div class="service-icon-box">
+                  <img
+                    src="./assets/images/icon-app.svg
+                "
+                    alt="design icon"
+                    width="40"
+                  />
+                </div>
+
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Android Development</h4>
+
+                  <p class="service-item-text">
+                    Designed and Implemented a Mobile App using Android Studio.
+                  </p>
+                </div>
+              </li>
+
+              <li class="service-item">
+                <div class="service-icon-box">
+                  <img
+                    src="./assets/images/server.png"
+                    alt="mobile app icon"
+                    width="40"
+                  />
+                </div>
+
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Cloud Computing</h4>
+
+                  <p class="service-item-text">
+                    Acquired proficiency in Azure and Google Cloud Platform (GCP).
+                  </p>
+                </div>
+              </li>
+
+              <li class="service-item">
+                <div class="service-icon-box">
+                  <img
+                    src="./assets/images/machine-learning.png"
+                    alt="camera icon"
+                    width="40"
+                  />
+                </div>
+
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Machine Learning</h4>
+
+                  <p class="service-item-text">
+                    Worked on various machine learning models 
+                    like SVM, Random Forest, etc.
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </section>
+
+        </article>
+
+        <!--
+        - #Education
+      -->
+
+        <article class="Portfolio" data-page="education">
+          <header>
+            <h2 class="h2 article-title">Education</h2>
+          </header>
+
+          <section class="timeline">
+            <div class="title-wrapper">
+              <div class="icon-box">
+                <ion-icon name="book-outline"></ion-icon>
+              </div>
+
+              <h3 class="h3"></h3>
+            </div>
+
+            <ol class="timeline-list">
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">
+                  VR Siddhartha Engineering College
+                </h4>
+                <table>
+                  <tr>
+                    <td style="padding-right: 30px;">
+                      <span>            
+                      <li class="contact-item">
+                    <div>
+                      <ion-icon name="calendar-outline"></ion-icon>
+
+                    </div>
+                    <address>2021 - 2024</address>
+                  <div>
+              </div>
+            </li></span>
+                    </td>
+                    <td><span>            
+                      <li class="contact-item">
+                    <div>
+                      <ion-icon name="location-outline"></ion-icon>
+
+                    </div>
+                    <address>Vijayawada</address>
+                  <div>
+              </div>
+            </li></span></td>
+
+                  </tr>
+                </table>
+
+                
+              
+
+                <p class="timeline-text">
+                  I'm currently pursuing Bachelors of Technology (B.Tech) in the Stream of Computer Science and Engineering.
+                </p>
+              </li>
+
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">A.A.N.M & V.V.R.S.R Polytechnic College</h4>
+
+                <table>
+                  <tr>
+                    <td style="padding-right: 30px;">
+                      <span>            
+                      <li class="contact-item">
+                    <div>
+                      <ion-icon name="calendar-outline"></ion-icon>
+
+                    </div>
+                    <address>2018-2021</address>
+                  <div>
+              </div>
+            </li></span>
+                    </td>
+                    <td><span>            
+                      <li class="contact-item">
+                    <div>
+                      <ion-icon name="location-outline"></ion-icon>
+
+                    </div>
+                    <address>Gudlavalleru</address>
+                  <div>
+              </div>
+            </li></span></td>
+
+                  </tr>
+                </table>
+
+                <p class="timeline-text">
+                  I've finished my technical education through the State Board of Technical Education (SBTET) in the field of computer engineering.
+                </p>
+              </li>
+
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">
+                  V.M.C High School
+                </h4>
+
+                <table>
+                  <tr>
+                    <td style="padding-right: 30px;">
+                      <span>            
+                      <li class="contact-item">
+                    <div>
+                      <ion-icon name="calendar-outline"></ion-icon>
+
+                    </div>
+                    <address>2017-2018</address>
+                  <div>
+              </div>
+            </li></span>
+                    </td>
+                    <td><span>            
+                      <li class="contact-item">
+                    <div>
+                      <ion-icon name="location-outline"></ion-icon>
+
+                    </div>
+                    <address>Vijayawada</address>
+                  <div>
+              </div>
+            </li></span></td>
+
+                  </tr>
+                </table>
+
+                <p class="timeline-text">
+                  I hold a state Board of Secondary School Certificate (SSC) proving that I completed my high school education.
+                </p>
+              </li>
+            </ol>
+          </section>
+
+
+          <section class="portfolio" hidden>           
+
+            <div class="filter-select-box" hidden>
+              <button class="filter-select" data-select>
+                <div class="select-value" data-selecct-value>
+                  Select category
+                </div>
+
+                <div class="select-icon">
+                  <ion-icon name="chevron-down"></ion-icon>
+                </div>
+              </button>
+
+              <ul class="select-list">
+                <li class="select-item">
+                  <button data-select-item>All</button>
+                </li>
+
+                <li class="select-item">
+                  <button data-select-item>Web design</button>
+                </li>
+
+                <li class="select-item">
+                  <button data-select-item>Applications</button>
+                </li>
+
+                <li class="select-item">
+                  <button data-select-item>Web development</button>
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <section class="clients">
+            <h3 class="h3 clients-title">Tools & Technologies</h3>
+
+            <ul class="clients-list has-scrollbar">
+              <li class="clients-item">
+                <a href="#">
+                  <img
+                    src="./assets/images/android.png"
+                    alt="logo"
+                  />
+                </a>
+              </li>
+
+              <li class="clients-item">
+                <a href="#">
+                  <img
+                    src="./assets/images/python.png"
+                    alt="logo"
+                  />
+                </a>
+              </li>
+
+              <li class="clients-item">
+                <a href="#">
+                  <img
+                    src="./assets/images/html.png"
+                    alt="logo"
+                  />
+                </a>
+              </li>
+
+              <li class="clients-item">
+                <a href="#">
+                  <img
+                    src="./assets/images/css.png"
+                    alt="logo"
+                  />
+                </a>
+              </li>
+
+              <li class="clients-item">
+                <a href="#">
+                  <img
+                    src="./assets/images/js.png"
+                    alt="logo"
+                  />
+                </a>
+              </li>
+
+              <li class="clients-item">
+                <a href="#">
+                  <img
+                    src="./assets/images/java.png"
+                    alt="logo"
+                  />
+                </a>
+              </li>
+            </ul>
+          </section>
+
+        </article>
+        <!--
+        - #Projects
+      -->
+
+        <article class="Projects" data-page="projects">
+          <header>
+            <h2 class="h2 article-title">Projects</h2>
+          </header>
+
+          <section class="blog-posts">
+            <ul class="blog-posts-list">
+
+              <li class="blog-post-item">
+                <a href="https://play.google.com/store/apps/details?id=com.mperson.missingchild" target="_blank">
+                  <figure class="blog-banner-box">
+                    <img
+                      src="./assets/images/unnamed.png"
+                      alt="The forgotten art of spacing"
+                      loading="lazy"
+                    />
+                  </figure>
+
+                  <div class="blog-content">
+                    <div class="blog-meta">
+                      <p class="blog-category">Moblie Application</p>
+
+                      <span class="dot"></span>
+
+                      <time datetime="2022-02-23">Android</time>
+                    </div>
+
+                    <h3 class="h3 blog-item-title">
+                      Detection of Missing Person
+                    </h3>
+
+                    <p class="blog-text">
+                      A user friendly mobile application created using android studio to find out the missing persons.
+                    </p>
+                  </div>
+                </a>
+              </li>
+
+              <li class="blog-post-item">
+                <a href="https://github.com/vamsi061/HappyJourney" target="_blank">
+                  <figure class="blog-banner-box">
+                    <img
+                      src="https://user-images.githubusercontent.com/73982062/214049280-3145ba3e-400f-4a33-967b-ebe6dc9f1b76.jpg"
+                      alt="Best fonts every designer"
+                      loading="lazy"
+                    />
+                  </figure>
+
+                  <div class="blog-content">
+                    <div class="blog-meta">
+                      <p class="blog-category">Web Development</p>
+
+                      <span class="dot"></span>
+
+                      <time datetime="2022-02-23">Django</time>
+                    </div>
+
+                    <h3 class="h3 blog-item-title">
+                      Bus Ticket Booking Platfrom
+                    </h3>
+
+                    <p class="blog-text">
+                      A user friendly web application designed using Django.
+                    </p>
+                  </div>
+                </a>
+              </li>
+
+              <li class="blog-post-item">
+                <a href="https://www.linkedin.com/posts/vamsi061_ybifoundation-ybif-internship-activity-6983456335828799489-M3_f?utm_source=share&utm_medium=member_desktop" target="_blank">
+                  <figure class="blog-banner-box">
+                    <img
+                      src="./assets/images/mobile.png"
+                      alt="Best fonts every designer"
+                      loading="lazy"
+                    />
+                  </figure>
+
+                  <div class="blog-content">
+                    <div class="blog-meta">
+                      <p class="blog-category">Machine Learning</p>
+
+                      <span class="dot"></span>
+
+                      <time datetime="2022-02-23">Classification</time>
+                    </div>
+
+                    <h3 class="h3 blog-item-title">
+                      Mobile Price Classification
+                    </h3>
+
+                    <p class="blog-text">
+                      Performed classification using various algorithms like SVM, Random Forest etc.
+                    </p>
+                  </div>
+                </a>
+              </li>
+
+              <li class="blog-post-item">
+                <a href="https://www.linkedin.com/posts/vamsi061_ybifoundation-ybif-internship-activity-6983455258614091776-G18C?utm_source=share&utm_medium=member_desktop" target="_blank">
+                  <figure class="blog-banner-box">
+                    <img
+                      src="./assets/images/heart.png"
+                      alt="UI interactions of the week"
+                      loading="lazy"
+                    />
+                  </figure>
+
+                  <div class="blog-content">
+                    <div class="blog-meta">
+                      <p class="blog-category">Machine Learning</p>
+
+                      <span class="dot"></span>
+
+                      <time datetime="2022-02-23">Prediction</time>
+                    </div>
+
+                    <h3 class="h3 blog-item-title">
+                      Heart Disease Prediction
+                    </h3>
+
+                    <p class="blog-text">
+                      Heart Disease Prediction using K-Nearest Neighbors Machine Learning Algorithm.
+                    </p>
+                  </div>
+                </a>
+              </li>
+
+              <li class="blog-post-item">
+                <a href="http://ownonewebsite.unaux.com/?i=1" target="_blank">
+                  <figure class="blog-banner-box">
+                    <img
+                      src="./assets/images/screenshot.png"
+                      alt="Design conferences in 2022"
+                      loading="lazy"
+                    />
+                  </figure>
+
+                  <div class="blog-content">
+                    <div class="blog-meta">
+                      <p class="blog-category">Web Development</p>
+
+                      <span class="dot"></span>
+
+                      <time datetime="2022-02-23">First Website</time>
+                    </div>
+
+                    <h3 class="h3 blog-item-title">
+                      World Top Business persons
+                    </h3>
+
+                    <p class="blog-text">
+                      A simple web page designed using Html, css and Bootstrap.
+                    </p>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </section>
+        </article>
+
+        <!--
+        - #CONTACT
+      -->
+
+        <article class="contact" data-page="contact">
+          <header>
+            <h2 class="h2 article-title">Contact</h2>
+          </header>
+
+          <section class="mapbox" data-mapbox>
+            <figure>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d122410.10459621827!2d80.56248262040889!3d16.510148655097574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a35eff9482d944b%3A0x939b7e84ab4a0265!2sVijayawada%2C%20Andhra%20Pradesh!5e0!3m2!1sen!2sin!4v1701945642195!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </figure>
+          </section>
+
+          <section class="contact-form">
+            <h3 class="h3 form-title">Contact Form</h3>
+
+            <form action="https://api.web3forms.com/submit" method="POST" class="form" data-form>
+              <div class="input-wrapper">
+                <input type="hidden" name="access_key" value="937a095a-09f4-4d69-ba42-c43fdc1727f6">
+                <input
+                  type="text"
+                  name="fullname"
+                  class="form-input"
+                  placeholder="Full name"
+                  required
+                  data-form-input
+                />
+
+                <input
+                  type="email"
+                  name="email"
+                  class="form-input"
+                  placeholder="Email address"
+                  required
+                  data-form-input
+                />
+              </div>
+
+              <textarea
+                name="message"
+                class="form-input"
+                placeholder="Your Message/Suggessions/Appreciation"
+                required
+                data-form-input
+              ></textarea>
+
+              <button class="form-btn" type="submit" disabled data-form-btn>
+                <ion-icon name="paper-plane"></ion-icon>
+                <span>Send Message</span>
+              </button>
+            </form>
+          </section>
+        </article>
+      </div>
+    </main>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+    <script>
+      var typed=new Typed(".typing-text", {
+        strings:["Web Developer", "Android Developer"],
+        typedSpeed:50,
+        backSpeed:70,
+        smartBackspace: true,
+        backDelay: 700,
+        showCursor: false,
+        autoInsertCss: true,
+        loop: true
+      });
+
+
+    </script>
+
+    <script src="./assets/js/script.js"></script>
+
+    <!--
+    - ionicon link
+  -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
