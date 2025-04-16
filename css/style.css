@@ -988,7 +988,7 @@ a:hover{
   
   /* Unique SVGs per list item */
   .experience > .exp-infosys::after {
-    background-image: url('https://github.com/vamsi061/Portfolio/blob/main/images/infosys.svg');
+    background-image: url('https://raw.githubusercontent.com/vamsi061/Portfolio/6b7d77c5748261c70f0656f00e5ee8e0d27975a9/images/infosys.svg');
   }
   
   .experience >.exp-android::after {
