@@ -621,7 +621,7 @@ a:hover{
 
 #tools{
     padding: 100px 0px 80px 0px;
-    background-image: url(../images/grid.png);
+    background-image: none;
     background-size: contain;
     min-height: 100vh;
 }
@@ -666,7 +666,7 @@ a:hover{
 #projects{
     padding: 100px 0px 80px 0px;
     min-height: 100vh;
-    background-image: url(../images/grid.png);
+    background-image: none;
     background-size: contain;
 }
 
@@ -783,7 +783,7 @@ a:hover{
 #testimonials {
     padding: 100px 0px;
     min-height: 100vh;
-    background-image: url(../images/grid.png);
+    background-image: none;
     background-size: contain;
 }
 
@@ -812,7 +812,7 @@ a:hover{
 #contact{
     padding: 100px 0;
     min-height: 100vh;
-    background-image: url(../images/grid.png);
+    background-image: none;
     background-size: contain;
 }
 
@@ -1247,3 +1247,575 @@ footer{
 
 
 
+
+
+/* Badges Section */
+.badge-section .item {
+    text-align: center;
+    padding: 10px;
+    transition: transform 0.3s;
+}
+
+.badge-section .item:hover {
+    transform: scale(1.1);
+}
+
+.badge-section .item img {
+    display: block;
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    margin: 0 auto;
+}
+
+/* Achievements Section Styles */
+#achievements {
+    background-color: var(--bg-color); /* Matches theme */
+    padding: 100px 0;
+    position: relative;
+    z-index: 1;
+}
+
+/* Add a subtle separation if needed, or rely on alternating backgrounds */
+/* If #resume is gray_bg, and #projects is default (transparent/image), 
+   we might want #achievements to be distinctive or transparent. 
+   Let's make it transparent to show the global background image, 
+   but with glassmorphism cards. */
+
+#achievements {
+    background-color: transparent; 
+}
+
+.badge-carousel .item {
+    background: rgba(255, 255, 255, 0.05); /* Glass effect */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 20px;
+    margin: 10px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 180px; /* Ensure uniform height */
+}
+
+.badge-carousel .item:hover {
+    transform: translateY(-10px) scale(1.05);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--primary-color);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 0 15px var(--primary-color);
+}
+
+.badge-carousel .item img {
+    max-width: 100%;
+    max-height: 140px;
+    width: auto;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+    transition: filter 0.3s ease;
+}
+
+.badge-carousel .item:hover img {
+    filter: drop-shadow(0 5px 8px rgba(0,0,0,0.3));
+}
+
+/* Logos hover effect */
+.credly-logo-link, .google-logo-link {
+    transition: transform 0.3s ease;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(5px);
+}
+
+.credly-logo-link:hover, .google-logo-link:hover {
+    transform: scale(1.1);
+    background: rgba(255,255,255,0.15);
+}
+
+/* Dark mode specific adjustments if needed */
+[data-bs-theme="dark"] .badge-carousel .item {
+    border-color: rgba(255, 255, 255, 0.08);
+}
+
+[data-bs-theme="light"] .badge-carousel .item {
+    background: rgba(255, 255, 255, 0.6);
+    border-color: rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+[data-bs-theme="light"] .badge-carousel .item:hover {
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1), 0 0 10px rgba(65, 93, 230, 0.3);
+}
+
+/* Updated Achievements Design */
+
+.provider-logo-link {
+    transition: transform 0.3s ease;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(5px);
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.provider-logo-link:hover {
+    transform: scale(1.05);
+    background: rgba(255,255,255,0.1);
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.provider-logo {
+    height: 50px;
+    width: auto;
+    filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.2));
+}
+
+.badge-count-pill {
+    background: var(--primary-gradient-color);
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    box-shadow: 0 4px 10px rgba(230, 65, 87, 0.3);
+    display: inline-flex;
+    align-items: center;
+}
+
+/* Badge Cards - Clean & Modern */
+.badge-carousel .item {
+    background: var(--bg-color); /* Fallback */
+    background: rgba(255, 255, 255, 0.03); /* Subtle transparency */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 15px 10px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover Effect - Glow Border */
+.badge-carousel .item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 12px;
+    padding: 2px;
+    background: var(--primary-gradient-color);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.badge-carousel .item:hover::before {
+    opacity: 1;
+}
+
+.badge-carousel .item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.badge-carousel .item img {
+    max-width: 100%;
+    max-height: 150px;
+    width: auto;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.badge-carousel .item:hover img {
+    transform: scale(1.1);
+}
+
+/* Light Mode Overrides */
+[data-bs-theme="light"] .badge-carousel .item {
+    background: #fff;
+    border-color: rgba(0,0,0,0.05);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+[data-bs-theme="light"] .badge-carousel .item:hover {
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+[data-bs-theme="light"] .provider-logo-link {
+    background: #fff;
+    border-color: rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+/* Styling for Owl Carousel Navigation */
+.owl-theme .owl-nav {
+    margin-top: 10px;
+    text-align: center;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.owl-theme .owl-nav [class*=owl-] {
+    color: var(--text-color);
+    font-size: 14px;
+    margin: 5px;
+    padding: 10px 15px;
+    background: rgba(255, 255, 255, 0.1);
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.owl-theme .owl-nav [class*=owl-]:hover {
+    background: var(--primary-color);
+    color: #fff;
+    text-decoration: none;
+    transform: scale(1.1);
+}
+
+.owl-theme .owl-dots .owl-dot span {
+    width: 10px;
+    height: 10px;
+    margin: 5px 7px;
+    background: rgba(255, 255, 255, 0.2);
+    display: block;
+    -webkit-backface-visibility: visible;
+    transition: opacity .2s ease;
+    border-radius: 30px;
+}
+
+.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+    background: var(--primary-color);
+}
+
+/* Light Mode Overrides for Navigation */
+[data-bs-theme="light"] .owl-theme .owl-nav [class*=owl-] {
+    background: rgba(0, 0, 0, 0.05);
+    color: var(--text-color);
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-bs-theme="light"] .owl-theme .owl-nav [class*=owl-]:hover {
+    background: var(--primary-color);
+    color: #fff;
+}
+
+[data-bs-theme="light"] .owl-theme .owl-dots .owl-dot span {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+[data-bs-theme="light"] .owl-theme .owl-dots .owl-dot.active span {
+    background: var(--primary-color);
+}
+
+/* Badge Carousel Navigation - Vertically Centered Arrows */
+.badge-carousel .owl-nav {
+    position: absolute;
+    top: 50%;
+    left: -20px; /* Pull slightly outside the content area */
+    right: -20px;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0 !important;
+    pointer-events: none; /* Pass clicks through the empty space */
+    z-index: 5;
+}
+
+/* Specific styling for the buttons */
+.badge-carousel .owl-nav button.owl-prev,
+.badge-carousel .owl-nav button.owl-next {
+    pointer-events: auto; /* Re-enable clicks */
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: rgba(var(--bg-color-rgb), 0.1) !important; /* Adaptive semi-transparent */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color) !important;
+    font-size: 20px !important;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Hover State */
+.badge-carousel .owl-nav button.owl-prev:hover,
+.badge-carousel .owl-nav button.owl-next:hover {
+    background: var(--primary-gradient-color) !important;
+    color: #fff !important;
+    border-color: transparent !important;
+    transform: scale(1.15);
+    box-shadow: 0 8px 20px rgba(230, 65, 87, 0.4);
+}
+
+/* Prevent horizontal scrollbar caused by negative positioning on small screens */
+#achievements {
+    overflow-x: hidden; 
+}
+
+/* Adjustments for mobile to keep arrows inside */
+@media (max-width: 768px) {
+    .badge-carousel .owl-nav {
+        left: 0;
+        right: 0;
+    }
+}
+
+/* Centered Carousel Styles */
+.badge-carousel .owl-item {
+    opacity: 0.5;
+    transform: scale(0.85);
+    transition: all 0.4s ease;
+}
+
+.badge-carousel .owl-item.center {
+    opacity: 1;
+    transform: scale(1.1);
+    z-index: 10;
+}
+
+/* Ensure the centered item doesn't get cut off */
+.badge-carousel .owl-stage-outer {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    overflow: visible; /* Optional: allows shadows to breathe */
+}
+
+/* Adjust dots spacing for centered layout */
+.owl-theme .owl-dots {
+    margin-top: 25px !important;
+}
+
+/* Fix Dots Positioning */
+.badge-carousel .owl-dots {
+    margin-top: 40px !important; /* Push dots further down */
+    text-align: center;
+    width: 100%;
+    position: relative;
+    z-index: 10;
+}
+
+/* Ensure consistent card height for alignment */
+.badge-carousel .item {
+    height: 220px; /* Fixed height for consistency */
+}
+
+/* Responsive Fixes */
+@media (max-width: 991px) { /* Tablet/Laptop */
+    .badge-carousel .owl-nav {
+        left: -10px;
+        right: -10px;
+    }
+}
+
+@media (max-width: 768px) { /* Mobile */
+    .badge-carousel .owl-nav {
+        /* On mobile, standard bottom navigation might be cleaner, 
+           or keep arrows but make them smaller and inside */
+        position: relative;
+        top: auto;
+        transform: none;
+        justify-content: center;
+        margin-top: 20px !important;
+        left: 0;
+        right: 0;
+        gap: 20px; /* Space between arrows */
+    }
+    
+    .badge-carousel .owl-nav button.owl-prev, 
+    .badge-carousel .owl-nav button.owl-next {
+        /* Standard static buttons below items on mobile */
+        transform: none;
+        background: rgba(255, 255, 255, 0.1) !important;
+    }
+
+    .badge-carousel .owl-stage-outer {
+        /* Reduce padding on mobile to save space */
+        padding-top: 10px; 
+        padding-bottom: 10px;
+    }
+    
+    .badge-carousel .item {
+        /* Adjust card size on mobile */
+        height: 180px;
+        margin: 5px; 
+    }
+    
+    .badge-carousel .owl-item {
+        /* Less dramatic scaling on mobile */
+        opacity: 1; /* Keep all visible */
+        transform: scale(0.95);
+    }
+    
+    .badge-carousel .owl-item.center {
+        transform: scale(1);
+    }
+}
+
+/* ---- FINAL CAROUSEL FIXES ---- */
+
+/* 1. Fix Dots Positioning - Ensure they are below everything */
+.badge-carousel .owl-dots {
+    display: block !important;
+    width: 100%;
+    margin-top: 20px !important;
+    text-align: center;
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none;
+}
+
+/* 2. Desktop Navigation (Centered Arrows) */
+@media (min-width: 992px) {
+    .badge-carousel .owl-nav {
+        position: absolute;
+        top: 50%;
+        left: -50px;
+        right: -50px;
+        transform: translateY(-50%);
+        display: flex !important;
+        justify-content: space-between;
+        margin-top: 0 !important;
+        pointer-events: none;
+        z-index: 20;
+    }
+    
+    .badge-carousel .owl-nav button {
+        pointer-events: auto;
+    }
+}
+
+/* 3. Tablet Navigation (768px - 991px) */
+/* Keep arrows centered but bring them closer */
+@media (min-width: 768px) and (max-width: 991px) {
+    .badge-carousel .owl-nav {
+        position: absolute;
+        top: 50%;
+        left: -25px; 
+        right: -25px;
+        transform: translateY(-50%);
+        display: flex !important;
+        justify-content: space-between;
+        z-index: 20;
+    }
+}
+
+/* 4. Mobile Navigation (< 768px) */
+/* Move arrows BELOW the carousel, next to dots, or just hide them if dots are enough.
+   Let's put them below for better UX on small screens where side taps are hard. */
+@media (max-width: 767px) {
+    .badge-carousel .owl-nav {
+        position: relative;
+        top: auto;
+        left: auto;
+        right: auto;
+        transform: none;
+        display: flex !important;
+        justify-content: center;
+        margin-top: 15px !important;
+        gap: 20px;
+    }
+
+    .badge-carousel .owl-stage-outer {
+        overflow: hidden; /* Ensure no horizontal scroll on mobile */
+        padding: 10px 0;
+    }
+    
+    /* Ensure only 1 item is focused */
+    .badge-carousel .item {
+        transform: none !important; /* Remove complex scaling on mobile */
+        margin: 0 5px;
+        opacity: 1 !important;
+        height: auto;
+        min-height: 200px;
+    }
+}
+
+/* ---- FULL IMAGE BADGE DESIGN ---- */
+
+/* Reset Card Styles */
+.badge-carousel .item {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    padding: 0 !important;
+    margin: 0 !important; /* Margins handled by owl-item/responsive settings */
+    height: 300px !important; /* Taller area for full images */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: visible !important; /* Allow image to scale out */
+}
+
+/* Remove the hover border glow */
+.badge-carousel .item::before {
+    display: none !important;
+}
+
+/* Image Styling */
+.badge-carousel .item img {
+    max-width: 100% !important;
+    max-height: 250px !important; /* Significantly larger */
+    width: auto !important;
+    height: auto !important;
+    display: block;
+    margin: 0 auto;
+    
+    /* Add shadow directly to the image contour (PNG/SVG transparency) */
+    filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3));
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Active/Center Item Styling */
+.badge-carousel .owl-item.center .item img {
+    /* Enhanced Glow for the active item */
+    filter: drop-shadow(0 15px 30px rgba(65, 93, 230, 0.4)); 
+    transform: scale(1.1);
+}
+
+/* Side Items (Inactive) */
+.badge-carousel .owl-item:not(.center) .item img {
+    filter: grayscale(80%) drop-shadow(0 2px 5px rgba(0,0,0,0.1));
+    opacity: 0.6;
+}
+
+/* Hover Effect */
+.badge-carousel .owl-item:hover .item img {
+    transform: scale(1.15);
+    filter: drop-shadow(0 10px 20px rgba(230, 65, 87, 0.4));
+    opacity: 1;
+    grayscale: 0%;
+}
+
+/* Adjust navigation arrows to fit the larger images */
+@media (min-width: 992px) {
+    .badge-carousel .owl-nav {
+        /* Move arrows further out to avoid covering the large badges */
+        left: -60px;
+        right: -60px;
+    }
+}

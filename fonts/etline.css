@@ -1,10 +1,6 @@
 @font-face {
 	font-family: 'et-line';
-	src:url('et-line.eot');
-	src:url('et-line.eot?#iefix') format('embedded-opentype'),
-		url('et-line.woff') format('woff'),
-		url('et-line.ttf') format('truetype'),
-		url('et-line.svg#et-line') format('svg');
+	src: url('et-line.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
