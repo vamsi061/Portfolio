@@ -16,6 +16,7 @@
 
 /* Global Variables */
 :root{
+    --bg-color-rgb: 33, 33, 33;
     --font-family: 'Rubik', sans-serif;
     --primary-color: #415de6;
     --secondary-color: #e64157;
@@ -67,6 +68,7 @@ a:hover{
     --text-color: #fff;
     --muted-text: #9a9a9a;
     --bg-color: #212121;
+    --bg-color-rgb: 33, 33, 33;
     --btn-color: #fff;
     --offcanvas-bg: rgba(0,0,0,0.9);
     --offcanvas-border-color: rgba(255, 255, 255, 0.2);
@@ -96,8 +98,9 @@ a:hover{
 /* Light Mode styles */
 [data-bs-theme="light"] {
     --text-color: #000;
-    --muted-text: #000;
+    --muted-text: #555;
     --bg-color: #fff;
+    --bg-color-rgb: 255, 255, 255;
     --btn-color: #fff;
     --offcanvas-bg: rgba(215, 215, 215, 0.9);
     --offcanvas-border-color: rgba(255, 255, 255, 0.2);
@@ -657,6 +660,14 @@ a:hover{
 
 #timelines{
     padding: 100px 0px 80px 0px;
+}
+
+.section_padding {
+    padding: 80px 0;
+}
+
+.gray_bg {
+    background: rgba(128, 128, 128, 0.05);
 }
 
 /*--------------------------------------------------------------

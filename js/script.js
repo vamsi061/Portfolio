@@ -52,28 +52,6 @@ function scrollToTop(){
     document.documentElement.scrollTop = 0;
 }
 
-//Testimonial Slider
-$(document).ready(function(){
-    $("#testimonial-slider").owlCarousel({
-        items:3,
-        nav:true,
-        loop: true,
-        autoplay: true,
-        autoplayTimeout: 3000,
-        responsive:{
-            0:{
-                items:1,
-            },
-            768:{
-                items:2,
-            },
-            1170:{
-                items:3,
-            }
-        }
-    });
-});
-
 const fallbackBadges = {
     "data": [
         {
@@ -204,13 +182,6 @@ const fallbackBadges = {
         }
     ]
 };
-
-// Function to render badges (reusable)
-function renderBadges(badgesData) {
-    const container = $("#credly-badges");
-    container.empty(); // Clear potential "loading" text
-    
-    }
 
 // Function to render badges (reusable)
 function renderBadges(badgesData) {
