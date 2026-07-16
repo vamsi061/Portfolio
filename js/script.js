@@ -294,3 +294,18 @@ $(document).ready(function(){
         }
     });
 });
+
+// ============================================
+// ENHANCEMENTS: Floating Background Particles
+// ============================================
+document.addEventListener('DOMContentLoaded', function() {
+    var canvas = document.getElementById('particles-canvas');
+    if (!canvas) return;
+    
+    // Create 12 floating particles
+    for (var i = 0; i < 12; i++) {
+        var particle = document.createElement('div');
+        particle.className = 'particle';
+        canvas.appendChild(particle);
+    }
+});

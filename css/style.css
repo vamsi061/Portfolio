@@ -1830,3 +1830,215 @@ footer{
         right: -60px;
     }
 }
+
+/*==============================================================
+# ENHANCEMENTS - Floating Particles Background
+==============================================================*/
+#particles-canvas {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0;
+    animation: float-particle linear infinite;
+}
+
+.particle:nth-child(1) { width: 4px; height: 4px; left: 5%; animation-duration: 18s; animation-delay: 0s; background: var(--secondary-color); }
+.particle:nth-child(2) { width: 7px; height: 7px; left: 15%; animation-duration: 22s; animation-delay: 2s; background: var(--primary-color); }
+.particle:nth-child(3) { width: 3px; height: 3px; left: 25%; animation-duration: 16s; animation-delay: 4s; background: var(--tertiary-color); }
+.particle:nth-child(4) { width: 9px; height: 9px; left: 35%; animation-duration: 25s; animation-delay: 1s; background: var(--primary-color); }
+.particle:nth-child(5) { width: 5px; height: 5px; left: 45%; animation-duration: 19s; animation-delay: 3s; background: var(--secondary-color); }
+.particle:nth-child(6) { width: 6px; height: 6px; left: 55%; animation-duration: 21s; animation-delay: 5s; background: var(--tertiary-color); }
+.particle:nth-child(7) { width: 4px; height: 4px; left: 65%; animation-duration: 17s; animation-delay: 2s; background: var(--primary-color); }
+.particle:nth-child(8) { width: 8px; height: 8px; left: 75%; animation-duration: 23s; animation-delay: 6s; background: var(--secondary-color); }
+.particle:nth-child(9) { width: 5px; height: 5px; left: 85%; animation-duration: 15s; animation-delay: 4s; background: var(--tertiary-color); }
+.particle:nth-child(10) { width: 6px; height: 6px; left: 92%; animation-duration: 20s; animation-delay: 0s; background: var(--primary-color); }
+.particle:nth-child(11) { width: 3px; height: 3px; left: 50%; animation-duration: 14s; animation-delay: 7s; background: var(--secondary-color); }
+.particle:nth-child(12) { width: 7px; height: 7px; left: 70%; animation-duration: 24s; animation-delay: 3s; background: var(--tertiary-color); }
+
+@keyframes float-particle {
+    0% { transform: translateY(105vh) scale(0); opacity: 0; }
+    10% { opacity: 0.35; }
+    85% { opacity: 0.35; }
+    100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+}
+
+/*==============================================================
+# ENHANCEMENTS - Enhanced Card Hover Effects
+==============================================================*/
+.skill:hover,
+#things-i-love .card:hover,
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+    border-color: rgba(65, 93, 230, 0.2);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.skill,
+#things-i-love .card,
+.project-card {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.skill:hover .skill-image {
+    transform: scale(1.15) rotate(3deg);
+    transition: transform 0.4s ease;
+}
+
+.skill-image {
+    transition: transform 0.4s ease;
+}
+
+/* Interest circle glow pulse */
+#things-i-love .circle {
+    position: relative;
+    overflow: hidden;
+}
+
+#things-i-love .circle::after {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: conic-gradient(transparent, rgba(255,255,255,0.1), transparent 30%);
+    animation: rotate-glow 3s linear infinite;
+}
+
+@keyframes rotate-glow {
+    to { transform: rotate(360deg); }
+}
+
+/*==============================================================
+# ENHANCEMENTS - Social Icons Hover
+==============================================================*/
+.social-icons a {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.social-icons a:hover {
+    transform: translateY(-3px) scale(1.1);
+    color: var(--primary-color);
+    text-shadow: 0 0 20px rgba(65, 93, 230, 0.4);
+}
+
+/*==============================================================
+# ENHANCEMENTS - Hero Name Subtle Animation
+==============================================================*/
+#hero .name {
+    background-size: 200% auto;
+    animation: gradient-shift 4s ease infinite;
+}
+
+@keyframes gradient-shift {
+    0%, 100% { background-position: 0% center; }
+    50% { background-position: 100% center; }
+}
+
+/*==============================================================
+# ENHANCEMENTS - Button Glow
+==============================================================*/
+.primary-bg-btn, .secondary-bg-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.primary-bg-btn::after, .secondary-bg-btn::after {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.primary-bg-btn:hover::after, .secondary-bg-btn:hover::after {
+    opacity: 1;
+}
+
+/*==============================================================
+# ENHANCEMENTS - Footer Glassmorphism Overlay
+==============================================================*/
+footer {
+    position: relative;
+    z-index: 1;
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-distributed {
+    background: rgba(41, 44, 47, 0.85) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Light mode footer */
+[data-bs-theme="light"] .footer-distributed {
+    background: rgba(240, 240, 245, 0.9) !important;
+}
+
+[data-bs-theme="light"] .footer-distributed .footer-links a,
+[data-bs-theme="light"] .footer-distributed .footer-company-about {
+    color: #555 !important;
+}
+
+[data-bs-theme="light"] .footer-distributed .footer-center i {
+    background-color: rgba(0,0,0,0.08) !important;
+    color: #555 !important;
+}
+
+/*==============================================================
+# ENHANCEMENTS - Scroll Reveal
+==============================================================*/
+[data-aos] {
+    transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+}
+
+/*==============================================================
+# ENHANCEMENTS - Badge Carousel Glow
+==============================================================*/
+.badge-carousel .owl-item.center .item {
+    box-shadow: 0 0 30px rgba(65, 93, 230, 0.15);
+}
+
+/*==============================================================
+# ENHANCEMENTS - Back to top smoother
+==============================================================*/
+#backToTopButton {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background: rgba(255,255,255,0.05);
+    border-radius: 12px !important;
+    padding: 5px;
+    right: 20px;
+    bottom: 30px;
+}
+
+#backToTopButton:hover {
+    background: rgba(65, 93, 230, 0.15);
+}
+
+/*==============================================================
+# ENHANCEMENTS - Section dividers
+==============================================================*/
+#hero, #about, #skills, #projects, #contact {
+    position: relative;
+    z-index: 1;
+}
+#things-i-love .circle i { position: relative; z-index: 1; }
