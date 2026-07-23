@@ -8,6 +8,12 @@
     src: url('../fonts/Agustina.woff') format('woff');
 }
 
+@font-face {
+    font-family: 'Dancing Script';
+    src: url('../fonts/DancingScript-Medium.ttf') format('truetype');
+}
+
+
 /* Global Variables */
 :root{
     --bg-color-rgb: 33, 33, 33;
