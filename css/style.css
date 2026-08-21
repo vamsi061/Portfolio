@@ -52,7 +52,12 @@
 /* ---------- Base ---------- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-html { scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-height) + 12px); }
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: calc(var(--nav-height) + 12px);
+    overflow-x: hidden;
+    overflow-x: clip; /* hard-stop horizontal panning on mobile */
+}
 
 body {
     font-family: var(--font-body);
@@ -820,6 +825,7 @@ img { max-width: 100%; height: auto; }
     color: var(--text);
     border-radius: var(--radius-sm);
     padding: .75rem 1rem;
+    font-size: 16px; /* >=16px prevents iOS Safari auto-zoom on focus */
 }
 .form-control:focus {
     background: var(--surface-2);
@@ -968,12 +974,14 @@ img { max-width: 100%; height: auto; }
 @media (max-width: 991.98px) {
     section { padding: 72px 0; }
     .hero-portrait { max-width: 300px; margin-top: 1rem; }
-    .chip-1 { left: -6%; }
-    .chip-2 { right: -4%; }
+    .chip-1 { left: -10px; }
+    .chip-2 { right: -10px; }
 }
 @media (max-width: 575.98px) {
     .tagline { font-size: .95rem; }
     .floating-chip { font-size: .68rem; padding: .4rem .65rem; }
+    .chip-1 { left: -6px; }
+    .chip-2 { right: -6px; }
     .timeline { padding-left: 40px; }
     .timeline::before { left: 18px; }
     .timeline-dot { left: -40px; width: 38px; height: 38px; font-size: .95rem; }
