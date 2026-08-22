@@ -63,12 +63,6 @@ var PORTFOLIO_KNOWLEDGE = {
             org: 'GDSC — VR Siddhartha Engineering College',
             period: '2023 — 2024',
             points: ['Helped peers learn Android development fundamentals in the Google Developer Student Clubs community.']
-        },
-        {
-            title: 'GoogleCloudReady Facilitator',
-            org: 'Google Cloud',
-            period: '2022',
-            points: ['Applied Google Cloud Platform concepts to real-world scenarios in a rigorous program.']
         }
     ],
 
@@ -95,8 +89,7 @@ var PORTFOLIO_KNOWLEDGE = {
         { name: 'Missing Person Finder', stack: ['Android', 'Java', 'Mobile App'], desc: 'User-friendly Android application that helps report and search for missing persons.', link: 'https://github.com/vamsi061/Missing-Person' },
         { name: 'Bus Ticket Booking (HappyJourney)', stack: ['Django', 'HTML/CSS', 'Web App'], desc: 'Bus ticket booking web application designed with Django.', link: 'https://github.com/vamsi061/HappyJourney' },
         { name: 'Mobile Price Classification', stack: ['Machine Learning', 'Python', 'SVM · Random Forest'], desc: 'Classified mobile price ranges using SVM, Random Forest and other algorithms during the YBI Foundation internship.', link: 'LinkedIn post linked on the project card' },
-        { name: 'Heart Disease Prediction', stack: ['Machine Learning', 'KNN', 'Healthcare'], desc: 'Predicts heart disease using the K-Nearest Neighbors algorithm.', link: 'LinkedIn post linked on the project card' },
-        { name: 'Top Business Persons', stack: ['HTML', 'CSS'], desc: 'First ever website — a simple profile page of top business personalities.', link: 'http://ownonewebsite.unaux.com/' }
+        { name: 'Heart Disease Prediction', stack: ['Machine Learning', 'KNN', 'Healthcare'], desc: 'Predicts heart disease using the K-Nearest Neighbors algorithm.', link: 'LinkedIn post linked on the project card' }
     ],
 
     faqs: {
