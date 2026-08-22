@@ -303,16 +303,25 @@ document.addEventListener('DOMContentLoaded', function () {
     duplicateTrack(document.getElementById('google-badges'));
 
     var credlyUser = '732f62e8-4b03-46ea-9f0f-e7d737c4a439';
-    var proxyUrl = 'https://api.codetabs.com/v1/proxy?quest=';
     var targetUrl = encodeURIComponent('https://www.credly.com/users/' + credlyUser + '/badges.json');
+    var proxies = [
+        'https://api.codetabs.com/v1/proxy?quest=',
+        'https://api.allorigins.win/raw?url='
+    ];
 
     // Render fallback immediately so the section is never empty
     renderCredlyBadges(fallbackBadges);
 
-    fetch(proxyUrl + targetUrl)
-        .then(function (res) { if (!res.ok) throw new Error(res.status); return res.json(); })
-        .then(function (data) {
-            if (data && Array.isArray(data.data) && data.data.length) {
+    function tryProxy(i) {
+        if (i >= proxies.length) {
+            console.warn('All Credly proxies unavailable — keeping static badges.');
+            return;
+        }
+        fetch(proxies[i] + targetUrl)
+            .then(function (res) { if (!res.ok) throw new Error(res.status); return res.text(); })
+            .then(function (text) { return JSON.parse(text); })
+            .then(function (data) {
+                if (!data || !Array.isArray(data.data) || !data.data.length) throw new Error('bad payload');
                 console.log('Credly badges fetched dynamically.');
                 renderCredlyBadges(data.data.map(function (b) {
                     return {
@@ -321,11 +330,10 @@ document.addEventListener('DOMContentLoaded', function () {
                         image_url: b.badge_template && b.badge_template.image_url
                     };
                 }));
-            }
-        })
-        .catch(function (err) {
-            console.warn('Using fallback Credly badges:', err.message);
-        });
+            })
+            .catch(function () { tryProxy(i + 1); });
+    }
+    tryProxy(0);
 });
 
 // ---------- Trailhead (Salesforce) badges ----------
@@ -676,14 +684,18 @@ function renderTrailblazerBadges(list) {
 
         var imgWrap = document.createElement('div');
         imgWrap.className = 'badge-img';
-        var img = document.createElement('img');
-        img.src = b.icon;
-        img.alt = awardTypeLabel(b.type) + ' - ' + title;
-        img.loading = 'lazy';
-        img.addEventListener('error', function () {
+        if (b.icon) {
+            var img = document.createElement('img');
+            img.src = b.icon;
+            img.alt = awardTypeLabel(b.type) + ' - ' + title;
+            img.loading = 'lazy';
+            img.addEventListener('error', function () {
+                imgWrap.innerHTML = '<i class="bi bi-patch-check-fill"></i>';
+            });
+            imgWrap.appendChild(img);
+        } else {
             imgWrap.innerHTML = '<i class="bi bi-patch-check-fill"></i>';
-        });
-        imgWrap.appendChild(img);
+        }
 
         var caption = document.createElement('span');
         caption.className = 'badge-name';
@@ -700,33 +712,8 @@ function renderTrailblazerBadges(list) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    // Render static snapshot immediately, then try a live refresh.
+    // Static snapshot only — the Trailhead GraphQL API blocks browser calls
+    // (CORS), so badges are refreshed by re-running the sync script and
+    // updating the trailblazerBadges array in js/script.js.
     renderTrailblazerBadges(trailblazerBadges);
-
-    fetch('https://profile.api.trailhead.com/graphql', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ query: TRAILHEAD_QUERY })
-    })
-        .then(function (res) { return res.json(); })
-        .then(function (data) {
-            var profile = (data && data.data && data.data.profile) || {};
-            var edges = (profile.earnedAwards && profile.earnedAwards.edges) || [];
-            if (!edges.length) return;
-            var fresh = edges.map(function (e) {
-                var n = e.node || {};
-                var a = n.award || {};
-                return {
-                    title: a.title,
-                    type: a.type,
-                    icon: a.icon,
-                    url: (a.content && a.content.webUrl) || null
-                };
-            });
-            if (fresh.length !== trailblazerBadges.length) {
-                console.log('Trailhead badges refreshed:', fresh.length);
-                renderTrailblazerBadges(fresh);
-            }
-        })
-        .catch(function () { /* keep static snapshot */ });
 });

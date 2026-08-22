@@ -168,6 +168,18 @@
         openBtn.addEventListener('click', togglePanel);
         $('[data-act="close"]', panel).addEventListener('click', togglePanel);
         sendBtn.addEventListener('click', submitInput);
+
+        // Keyboard-aware positioning — safe here: panel & input exist now
+        var vv = window.visualViewport;
+        if (vv) {
+            vv.addEventListener('resize', syncToKeyboard);
+            vv.addEventListener('scroll', syncToKeyboard);
+        }
+        window.addEventListener('orientationchange', function () {
+            setTimeout(syncToKeyboard, 200);
+        });
+        input.addEventListener('focus', function () { setTimeout(syncToKeyboard, 120); });
+        input.addEventListener('blur', function () { setTimeout(syncToKeyboard, 200); });
         input.addEventListener('keydown', function (e) { if (e.key === 'Enter') submitInput(); });
         document.addEventListener('keydown', function (e) {
             if (e.key === 'Escape' && panel.classList.contains('open')) togglePanel();
@@ -192,7 +204,7 @@
     /* Pin the panel to the VISUAL viewport so the mobile keyboard can't
        cover or eject it (dvh/CSS alone can't do this on iOS). */
     function syncToKeyboard() {
-        if (!panel.classList.contains('open')) return;
+        if (!panel || !input || !panel.classList.contains('open')) return;
         if (window.innerWidth > 640) {           // desktop: nothing to fight
             panel.style.height = '';
             panel.style.bottom = '';
@@ -205,17 +217,7 @@
         panel.style.bottom = (overlap + (overlap > 0 ? 4 : 12)) + 'px';
     }
 
-    (function watchKeyboard() {
-        var vv = window.visualViewport;
-        if (!vv) return;
-        vv.addEventListener('resize', syncToKeyboard);
-        vv.addEventListener('scroll', syncToKeyboard);
-        window.addEventListener('orientationchange', function () {
-            setTimeout(syncToKeyboard, 200);
-        });
-        input.addEventListener('focus', function () { setTimeout(syncToKeyboard, 120); });
-        input.addEventListener('blur', function () { setTimeout(syncToKeyboard, 200); });
-    })();
+
 
     function greet() {
         addMsg('bot', 'Hi there! 👋 I\'m **' + CFG.botName + '** — ' + CFG.ownerName + '\'s portfolio assistant.\n'
