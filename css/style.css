@@ -1034,3 +1034,32 @@ img { max-width: 100%; height: auto; }
     *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
     .particle { display: none; }
 }
+
+/* ---------- Certifications on mobile ---------- */
+@media (max-width: 575.98px) {
+    .badge-provider {
+        padding: .95rem .8rem 1rem;
+        border-radius: 14px;
+        margin-bottom: 1.1rem;
+    }
+    .provider-head { gap: .55rem; margin-bottom: .85rem; }
+    .provider-link {
+        flex: 1 1 100%;
+        justify-content: space-between;
+        padding: .5rem .75rem;
+    }
+    .provider-logo { height: 20px; }
+    .provider-name { font-size: .86rem; }
+    .provider-name i { margin-left: auto; }
+    .badge-count-pill { font-size: .7rem; padding: .28rem .6rem; }
+    .badge-track .item {
+        width: 126px;
+        padding: .55rem .5rem .55rem;
+        margin-right: .7rem;
+    }
+    .badge-img { border-radius: 8px; }
+    .badge-name { font-size: .64rem; min-height: 1.7em; }
+    /* slower glide feels calmer on small screens */
+    #credly-badges { animation-duration: 70s; }
+    #google-badges { animation-duration: 44s; }
+}
