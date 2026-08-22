@@ -695,11 +695,28 @@ img { max-width: 100%; height: auto; }
 
 .badge-scroller-wrapper { position: relative; }
 
-/* Marquee auto-scroll */
-.badge-marquee { width: 100%; padding: .35rem 0; }
-.badge-marquee .item {
-    display: inline-flex;
-    vertical-align: middle;
+/* Seamless CSS marquee (duplicated track, pauses on hover, faded edges) */
+.badge-marquee {
+    overflow: hidden;
+    padding: .35rem 0;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+}
+.badge-track {
+    display: flex;
+    width: max-content;
+    animation: badgeScroll 45s linear infinite;
+}
+#google-badges { animation-duration: 28s; }
+.badge-marquee:hover .badge-track,
+.badge-marquee:focus-within .badge-track { animation-play-state: paused; }
+@keyframes badgeScroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+}
+
+.badge-track .item {
+    flex-shrink: 0;
     width: 158px;
     margin-right: 1.1rem;
     background: var(--surface);
@@ -708,11 +725,12 @@ img { max-width: 100%; height: auto; }
     padding: .85rem .8rem .75rem;
     transition: var(--transition);
 }
-.badge-marquee .item:hover {
+.badge-track .item:hover {
+    transform: translateY(-5px);
     border-color: color-mix(in srgb, var(--accent-1) 55%, transparent);
     box-shadow: var(--glow);
 }
-.badge-marquee .item a {
+.badge-track .item a {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -736,7 +754,7 @@ img { max-width: 100%; height: auto; }
     object-fit: contain;
     transition: transform .35s ease;
 }
-.badge-marquee .item:hover .badge-img img { transform: scale(1.09); }
+.badge-track .item:hover .badge-img img { transform: scale(1.09); }
 .badge-img i { font-size: 2rem; color: var(--accent-1); }
 .badge-name {
     font-size: .7rem;
@@ -751,7 +769,10 @@ img { max-width: 100%; height: auto; }
     min-height: 1.9em;
     transition: var(--transition);
 }
-.badge-marquee .item:hover .badge-name { color: var(--text); }
+.badge-track .item:hover .badge-name { color: var(--text); }
+@media (prefers-reduced-motion: reduce) {
+    .badge-track { animation: none; flex-wrap: wrap; width: auto; }
+}
 
 /* ---------- Contact ---------- */
 .contact-info-card {

@@ -200,8 +200,18 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // ---------- Badge marquees ----------
-// Auto-scroll handled natively via <marquee> tags (pause on hover).
-// Credly badges are rendered dynamically below; Google badges are static HTML.
+// Seamless CSS auto-scroll: each track is duplicated once so the loop has no gap.
+// Pauses on hover/focus via CSS. Credly badges render dynamically below.
+
+function duplicateTrack(track) {
+    if (!track || track.dataset.cloned === '1') return;
+    track.dataset.cloned = '1';
+    Array.prototype.slice.call(track.children).forEach(function (child) {
+        var clone = child.cloneNode(true);
+        clone.setAttribute('aria-hidden', 'true');
+        track.appendChild(clone);
+    });
+}
 
 // ---------- Credly badges (vanilla fetch + fallback) ----------
 var fallbackBadges = [
@@ -231,6 +241,7 @@ function renderCredlyBadges(badges) {
     if (!container) return;
 
     container.innerHTML = '';
+    container.dataset.cloned = '';
     badges.forEach(function (badge) {
         var name = badge.name || (badge.badge_template && badge.badge_template.name) || 'Certification';
         var imgUrl = badge.image_url || (badge.badge_template && badge.badge_template.image_url);
@@ -267,6 +278,7 @@ function renderCredlyBadges(badges) {
         container.appendChild(item);
     });
 
+    duplicateTrack(container);
     if (countEl) countEl.textContent = badges.length;
 }
 
@@ -287,6 +299,8 @@ document.addEventListener('DOMContentLoaded', function () {
         caption.textContent = img.alt;
         anchor.appendChild(caption);
     });
+
+    duplicateTrack(document.getElementById('google-badges'));
 
     var credlyUser = '732f62e8-4b03-46ea-9f0f-e7d737c4a439';
     var proxyUrl = 'https://api.codetabs.com/v1/proxy?quest=';
