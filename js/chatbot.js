@@ -240,7 +240,10 @@
         history.push({ role: 'user', content: text });
 
         if (!apiKey()) {
-            var note = '⚠️ The assistant isn\'t configured right now — it connects automatically once deployed with its API key. Meanwhile, reach ' + CFG.ownerName + ' via the contact form below!';
+            var live = /github\\.io$/.test(location.hostname);
+            var note = live
+                ? '⚠️ <b>Deployment pending.</b> This build has no API key injected. Fix: repo → <b>Actions → Deploy Portfolio → Run workflow</b> (must run AFTER saving the MISTRAL_API_KEY secret), and Settings → Pages → Source must be the <b>gh-pages</b> branch.'
+                : '⚠️ Running locally — the key is injected automatically on the deployed site via GitHub Actions. Meanwhile, everything else on the page works, and the contact form below always reaches ' + CFG.ownerName + '!';
             addMsg('bot', note);
             return;
         }

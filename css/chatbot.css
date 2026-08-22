@@ -124,7 +124,9 @@
 /* ---------- messages ---------- */
 .chat-body {
     flex: 1;
+    min-height: 0;
     overflow-y: auto;
+    overscroll-behavior: contain; /* keep page behind still while scrolling chat */
     padding: 1rem .9rem;
     display: flex;
     flex-direction: column;
@@ -239,7 +241,7 @@
     color: var(--text);
     border-radius: 999px;
     padding: .72rem 3.2rem .72rem 1.15rem;
-    font-size: 14px;
+    font-size: 16px; /* >=16px prevents iOS focus auto-zoom */
     outline: none;
     transition: var(--transition);
 }
@@ -271,5 +273,14 @@
 
 @media (max-width: 575.98px) {
     .chat-fab { right: 16px; bottom: 76px; }
-    .chat-panel { right: 12px; bottom: 12px; width: calc(100vw - 24px); height: min(74vh, 540px); }
+    .chat-panel {
+        right: 8px;
+        left: 8px;              /* anchor both edges — can never exceed screen */
+        bottom: 10px;
+        width: auto;
+        height: 70vh;           /* fallback */
+        height: 70dvh;          /* keyboard-aware on modern mobile browsers */
+        max-height: calc(100dvh - 80px);
+        border-radius: 18px;
+    }
 }
