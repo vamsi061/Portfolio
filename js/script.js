@@ -327,3 +327,406 @@ document.addEventListener('DOMContentLoaded', function () {
             console.warn('Using fallback Credly badges:', err.message);
         });
 });
+
+// ---------- Trailhead (Salesforce) badges ----------
+// Static snapshot of earned awards; refreshed from the Trailhead GraphQL API when possible.
+var TRAILBLAZER_PROFILE_URL = 'https://www.salesforce.com/trailblazer/guruvamsikallepalli';
+
+var trailblazerBadges = [
+  {
+    "title": "Developer Super Set",
+    "type": "SUPERBADGE",
+    "icon": "https://res.cloudinary.com/hy4kyit2a/f_auto/fl_lossy/q_70/learn/superbadges/superbadge_developer_superset/513dd652e042afb679675ee70bc694e2_badge.png",
+    "url": null
+  },
+  {
+    "title": "Process Automation Specialist Superbadge",
+    "type": "SUPERBADGE",
+    "icon": "https://res.cloudinary.com/hy4kyit2a/f_auto/fl_lossy/q_70/learn/superbadges/superbadge_process_automation_specialist/1a4f98bfa22508c396048433496def55_badge.png",
+    "url": null
+  },
+  {
+    "title": "Screen Flow Specialist Superbadge",
+    "type": "SUPERBADGE",
+    "icon": "https://res.cloudinary.com/hy4kyit2a/f_auto/fl_lossy/q_70/learn/superbadges/superbadge_screen_flow_specialist/4db533d414f4552b39e57c03eb072663_badge.png",
+    "url": null
+  },
+  {
+    "title": "Superbadge: Screen Flow Fundamentals",
+    "type": "SUPERBADGE",
+    "icon": "https://res.cloudinary.com/hy4kyit2a/f_auto/fl_lossy/q_70/learn/superbadges/superbadge_screen_flows_sbu/d7f57945f55e7fbd4c17e8e80a6d0598_badge.png",
+    "url": "https://trailhead.salesforce.com/content/learn/superbadges/superbadge_screen_flows_sbu"
+  },
+  {
+    "title": "Superbadge: Screen Flow Distribution",
+    "type": "SUPERBADGE",
+    "icon": "https://res.cloudinary.com/hy4kyit2a/f_auto/fl_lossy/q_70/learn/superbadges/superbadge_screen_distribution_sbu/ddcee40f60855da4e37a89cdb71da7dd_badge.png",
+    "url": "https://trailhead.salesforce.com/content/learn/superbadges/superbadge_screen_distribution_sbu"
+  },
+  {
+    "title": "Flow Elements and Resources Specialist Superbadge",
+    "type": "SUPERBADGE",
+    "icon": "https://res.cloudinary.com/hy4kyit2a/f_auto/fl_lossy/q_70/learn/superbadges/superbadge_flow_elements_specialist/ff154ba1999d5cc42389466723fcf15e_badge.png",
+    "url": null
+  },
+  {
+    "title": "Superbadge: Flow Administration",
+    "type": "SUPERBADGE",
+    "icon": "https://res.cloudinary.com/hy4kyit2a/f_auto/fl_lossy/q_70/learn/superbadges/superbadge_flow_administration_sbu/3b8248729e227e3f6ffa6af37ffe49b0_badge.png",
+    "url": "https://trailhead.salesforce.com/content/learn/superbadges/superbadge_flow_administration_sbu"
+  },
+  {
+    "title": "Superbadge: Flow Optimization",
+    "type": "SUPERBADGE",
+    "icon": "https://res.cloudinary.com/hy4kyit2a/f_auto/fl_lossy/q_70/learn/superbadges/superbadge_flow_optimization_sbu/75a15e009bca253a86caaf6eeeefe2ff_badge.png",
+    "url": "https://trailhead.salesforce.com/content/learn/superbadges/superbadge_flow_optimization_sbu"
+  },
+  {
+    "title": "Superbadge: Flow Fundamentals",
+    "type": "SUPERBADGE",
+    "icon": "https://res.cloudinary.com/hy4kyit2a/f_auto/fl_lossy/q_70/learn/superbadges/superbadge_flow_basics_sbu/b62a13bc6c32ff997303f547e2c41e7d_badge.png",
+    "url": "https://trailhead.salesforce.com/content/learn/superbadges/superbadge_flow_basics_sbu"
+  },
+  {
+    "title": "Approval Process Specialist Superbadge",
+    "type": "SUPERBADGE",
+    "icon": "https://res.cloudinary.com/hy4kyit2a/f_auto/fl_lossy/q_70/learn/superbadges/superbadge_ap_specialist/0a100d22c51699a5f2c5f484aec94437_badge.png",
+    "url": null
+  },
+  {
+    "title": "Superbadge: Approval Process Troubleshooting",
+    "type": "SUPERBADGE",
+    "icon": "https://res.cloudinary.com/hy4kyit2a/f_auto/fl_lossy/q_70/learn/superbadges/superbadge_ap_troubleshooting_sbu/303ca5d99fb702a5f780e2440f5c250c_badge.png",
+    "url": "https://trailhead.salesforce.com/content/learn/superbadges/superbadge_ap_troubleshooting_sbu"
+  },
+  {
+    "title": "Superbadge: Approval Process Management",
+    "type": "SUPERBADGE",
+    "icon": "https://res.cloudinary.com/hy4kyit2a/f_auto/fl_lossy/q_70/learn/superbadges/superbadge_ap_management_sbu/5f90fad54b786225f93315015752e265_badge.png",
+    "url": "https://trailhead.salesforce.com/content/learn/superbadges/superbadge_ap_management_sbu"
+  },
+  {
+    "title": "Flow Testing: Step-by-Step",
+    "type": "MODULE",
+    "icon": "https://res.cloudinary.com/hy4kyit2a/f_auto/fl_lossy/q_70/learn/modules/flow-testing-and-distribution/9f02416c1c56e108b9f834c8749ac15d_badge.png",
+    "url": null
+  },
+  {
+    "title": "Screen Flow Distribution",
+    "type": "MODULE",
+    "icon": "https://res.cloudinary.com/hy4kyit2a/f_auto/fl_lossy/q_70/learn/modules/screen_flow_distribution/bddcd7dcbf8e37a490b1f4cdcd89f97b_badge.png",
+    "url": "https://trailhead.salesforce.com/content/learn/modules/screen_flow_distribution"
+  },
+  {
+    "title": "Screen Flows",
+    "type": "MODULE",
+    "icon": "https://res.cloudinary.com/hy4kyit2a/f_auto/fl_lossy/q_70/learn/modules/screen-flows/f8ec5d70f82500288c9c7444a23f6375_badge.png",
+    "url": "https://trailhead.salesforce.com/content/learn/modules/screen-flows"
+  },
+  {
+    "title": "Create a Screen Flow That Checks for Duplicates",
+    "type": "PROJECT",
+    "icon": "https://res.cloudinary.com/hy4kyit2a/f_auto/fl_lossy/q_70/learn/projects/build-a-simple-flow/250ffca8049ecd6a8bcfbe0d6e3846ef_badge.png",
+    "url": "https://trailhead.salesforce.com/content/learn/projects/build-a-simple-flow"
+  },
+  {
+    "title": "Salesforce Badge",
+    "type": "BADGE",
+    "icon": null,
+    "url": null
+  },
+  {
+    "title": "Data and Actions in Flows",
+    "type": "MODULE",
+    "icon": "https://res.cloudinary.com/hy4kyit2a/f_auto/fl_lossy/q_70/learn/modules/data-and-actions-in-flows/3bb498fd6cccf4512b03f755a3bf78ef_badge.png",
+    "url": "https://trailhead.salesforce.com/content/learn/modules/data-and-actions-in-flows"
+  },
+  {
+    "title": "Build a Discount Approval Process",
+    "type": "PROJECT",
+    "icon": "https://res.cloudinary.com/hy4kyit2a/f_auto/fl_lossy/q_70/learn/projects/build-a-discount-approval-process/5fb4842313cbb9dc10dfe125d508ffda_badge.png",
+    "url": "https://trailhead.salesforce.com/content/learn/projects/build-a-discount-approval-process"
+  },
+  {
+    "title": "Flow Builder Basics",
+    "type": "MODULE",
+    "icon": "https://res.cloudinary.com/hy4kyit2a/f_auto/fl_lossy/q_70/learn/modules/flow-basics/c2d1e1b78bb73f734b6f668e6f9428de_badge.png",
+    "url": "https://trailhead.salesforce.com/content/learn/modules/flow-basics"
+  },
+  {
+    "title": "Apex Specialist",
+    "type": "SUPERBADGE",
+    "icon": "https://res.cloudinary.com/hy4kyit2a/f_auto/fl_lossy/q_70/learn/superbadges/superbadge_apex/2d3426c48dc056fd5c083ecb5cb66a56_badge.png",
+    "url": null
+  },
+  {
+    "title": "Lightning Web Components Basics",
+    "type": "MODULE",
+    "icon": "https://res.cloudinary.com/hy4kyit2a/f_auto/fl_lossy/q_70/learn/modules/lightning-web-components-basics/5cec7279d13ac36ab5ddbffae3035337_badge.png",
+    "url": "https://trailhead.salesforce.com/content/learn/modules/lightning-web-components-basics"
+  },
+  {
+    "title": "Quick Start: Lightning Web Components",
+    "type": "PROJECT",
+    "icon": "https://res.cloudinary.com/hy4kyit2a/f_auto/fl_lossy/q_70/learn/projects/quick-start-lightning-web-components/97fa54b90c579eaa8b4e63b80588679e_badge.png",
+    "url": "https://trailhead.salesforce.com/content/learn/projects/quick-start-lightning-web-components"
+  },
+  {
+    "title": "Approve Records with Approval Processes",
+    "type": "MODULE",
+    "icon": "https://res.cloudinary.com/hy4kyit2a/f_auto/fl_lossy/q_70/learn/modules/business_process_automation/eee3b8f9f85dde3f6681645ded4aa215_badge.png",
+    "url": "https://trailhead.salesforce.com/content/learn/modules/business_process_automation"
+  },
+  {
+    "title": "Developer Console Basics",
+    "type": "MODULE",
+    "icon": "https://res.cloudinary.com/hy4kyit2a/f_auto/fl_lossy/q_70/learn/modules/developer_console/a82f66a103ac46e465342fe42ae02375_badge.png",
+    "url": null
+  },
+  {
+    "title": "Leads and Opportunities",
+    "type": "MODULE",
+    "icon": "https://res.cloudinary.com/hy4kyit2a/f_auto/fl_lossy/q_70/learn/modules/leads_opportunities_lightning_experience/59b5454bc337616e4a0ac221f6af4f39_badge.png",
+    "url": "https://trailhead.salesforce.com/content/learn/modules/leads_opportunities_lightning_experience"
+  },
+  {
+    "title": "Shield Platform Encryption",
+    "type": "MODULE",
+    "icon": "https://res.cloudinary.com/hy4kyit2a/f_auto/fl_lossy/q_70/learn/modules/spe_admins/40cf448c30162567a43f16e2f3241ec6_badge.png",
+    "url": "https://trailhead.salesforce.com/content/learn/modules/spe_admins"
+  },
+  {
+    "title": "Formulas and Validations",
+    "type": "MODULE",
+    "icon": "https://res.cloudinary.com/hy4kyit2a/f_auto/fl_lossy/q_70/learn/modules/point_click_business_logic/d685dcb20e493c1bd3aac9d20ffac6e6_badge.png",
+    "url": "https://trailhead.salesforce.com/content/learn/modules/point_click_business_logic"
+  },
+  {
+    "title": "API Basics",
+    "type": "MODULE",
+    "icon": "https://res.cloudinary.com/hy4kyit2a/f_auto/fl_lossy/q_70/learn/modules/pw-api-basics/0a592c1a1e99a0695cd811499a801eef_badge.png",
+    "url": "https://trailhead.salesforce.com/content/learn/modules/pw-api-basics"
+  },
+  {
+    "title": "Event Monitoring",
+    "type": "MODULE",
+    "icon": "https://res.cloudinary.com/hy4kyit2a/f_auto/fl_lossy/q_70/learn/modules/event_monitoring/f1d010fe80ea0d025c902a56b8ff56bc_badge.png",
+    "url": "https://trailhead.salesforce.com/content/learn/modules/event_monitoring"
+  },
+  {
+    "title": "Apex Basics & Database",
+    "type": "MODULE",
+    "icon": "https://res.cloudinary.com/hy4kyit2a/f_auto/fl_lossy/q_70/learn/modules/apex_database/fab27840d343cc13934e9cf1f4a41dbc_badge.png",
+    "url": "https://trailhead.salesforce.com/content/learn/modules/apex_database"
+  },
+  {
+    "title": "Picklist Administration",
+    "type": "MODULE",
+    "icon": "https://res.cloudinary.com/hy4kyit2a/f_auto/fl_lossy/q_70/learn/modules/picklist_admin/2f4c2bb3463638506f20f88902482531_badge.png",
+    "url": "https://trailhead.salesforce.com/content/learn/modules/picklist_admin"
+  },
+  {
+    "title": "Data Management",
+    "type": "MODULE",
+    "icon": "https://res.cloudinary.com/hy4kyit2a/f_auto/fl_lossy/q_70/learn/modules/lex_implementation_data_management/4e8c947ac2967be79e0ca2722dcd491f_badge.png",
+    "url": "https://trailhead.salesforce.com/content/learn/modules/lex_implementation_data_management"
+  },
+  {
+    "title": "Duplicate Management",
+    "type": "MODULE",
+    "icon": "https://res.cloudinary.com/hy4kyit2a/f_auto/fl_lossy/q_70/learn/modules/sales_admin_duplicate_management/950e39701e85e96313aa77529610055b_badge.png",
+    "url": "https://trailhead.salesforce.com/content/learn/modules/sales_admin_duplicate_management"
+  },
+  {
+    "title": "Data Modeling",
+    "type": "MODULE",
+    "icon": "https://res.cloudinary.com/hy4kyit2a/f_auto/fl_lossy/q_70/learn/modules/data_modeling/c87f1c467561ff36a9bffdebcbc835e8_badge.png",
+    "url": "https://trailhead.salesforce.com/content/learn/modules/data_modeling"
+  },
+  {
+    "title": "Visualforce Basics",
+    "type": "MODULE",
+    "icon": "https://res.cloudinary.com/hy4kyit2a/f_auto/fl_lossy/q_70/learn/modules/visualforce_fundamentals/1b78e769311ab1dfd85a6734361bb055_badge.png",
+    "url": "https://trailhead.salesforce.com/content/learn/modules/visualforce_fundamentals"
+  },
+  {
+    "title": "Customize a Salesforce Object",
+    "type": "PROJECT",
+    "icon": "https://res.cloudinary.com/hy4kyit2a/f_auto/fl_lossy/q_70/learn/projects/customize-a-salesforce-object/1344712434eb96630de3f1c31dcc9bbd_badge.png",
+    "url": "https://trailhead.salesforce.com/content/learn/projects/customize-a-salesforce-object"
+  },
+  {
+    "title": "Superbadge Program Security: Quick Look",
+    "type": "MODULE",
+    "icon": "https://res.cloudinary.com/hy4kyit2a/f_auto/fl_lossy/q_70/learn/modules/superbadge-cred-security-quick-look/bd5bd8073bfeaa992eaadf941f4a9f5a_badge.png",
+    "url": null
+  },
+  {
+    "title": "Apex Triggers",
+    "type": "MODULE",
+    "icon": "https://res.cloudinary.com/hy4kyit2a/f_auto/fl_lossy/q_70/learn/modules/apex_triggers/b27bd74e219ef8fec8d06bfe71409cb5_badge.png",
+    "url": "https://trailhead.salesforce.com/content/learn/modules/apex_triggers"
+  },
+  {
+    "title": "Apex Integration Services",
+    "type": "MODULE",
+    "icon": "https://res.cloudinary.com/hy4kyit2a/f_auto/fl_lossy/q_70/learn/modules/apex_integration_services/06d0e8f1f5b59f14d070f0f6e86dc5bd_badge.png",
+    "url": "https://trailhead.salesforce.com/content/learn/modules/apex_integration_services"
+  },
+  {
+    "title": "Asynchronous Apex",
+    "type": "MODULE",
+    "icon": "https://res.cloudinary.com/hy4kyit2a/f_auto/fl_lossy/q_70/learn/modules/asynchronous_apex/37c7d1b37180b79d9dd4bcd3e1bdf056_badge.png",
+    "url": "https://trailhead.salesforce.com/content/learn/modules/asynchronous_apex"
+  },
+  {
+    "title": "Apex Testing",
+    "type": "MODULE",
+    "icon": "https://res.cloudinary.com/hy4kyit2a/f_auto/fl_lossy/q_70/learn/modules/apex_testing/2d3d525254af58a32f2325da207505ea_badge.png",
+    "url": "https://trailhead.salesforce.com/content/learn/modules/apex_testing"
+  },
+  {
+    "title": "Quick Start: Lightning App Builder",
+    "type": "PROJECT",
+    "icon": "https://res.cloudinary.com/hy4kyit2a/f_auto/fl_lossy/q_70/learn/projects/quickstart-app-builder/4d4adca4ec2f595abf20a7e70f91552f_badge.png",
+    "url": "https://trailhead.salesforce.com/content/learn/projects/quickstart-app-builder"
+  },
+  {
+    "title": "Quick Start: Build a Salesforce App",
+    "type": "PROJECT",
+    "icon": "https://res.cloudinary.com/hy4kyit2a/f_auto/fl_lossy/q_70/learn/projects/quickstart-devzone-app/1cd18e74b5adf2ee38c97651d6ca8e0f_badge.png",
+    "url": "https://trailhead.salesforce.com/content/learn/projects/quickstart-devzone-app"
+  },
+  {
+    "title": "Agentforce 360 Platform Basics",
+    "type": "MODULE",
+    "icon": "https://res.cloudinary.com/hy4kyit2a/f_auto/fl_lossy/q_70/learn/modules/starting_force_com/d6c87e2bd754dddc3116963498852e3a_badge.png",
+    "url": "https://trailhead.salesforce.com/content/learn/modules/starting_force_com"
+  },
+  {
+    "title": "Setup: Quick Look",
+    "type": "MODULE",
+    "icon": "https://res.cloudinary.com/hy4kyit2a/f_auto/fl_lossy/q_70/learn/modules/setup-quick-look/a2125d4cd76d29bc4f60c1813e685b81_badge.png",
+    "url": "https://trailhead.salesforce.com/content/learn/modules/setup-quick-look"
+  },
+  {
+    "title": "Salesforce Certifications: Quick Look",
+    "type": "MODULE",
+    "icon": "https://res.cloudinary.com/hy4kyit2a/f_auto/fl_lossy/q_70/learn/modules/salesforce-credentials-quick-look/9b663f1ecbe27859b8acf4ab72bb4bb2_badge.png",
+    "url": "https://trailhead.salesforce.com/content/learn/modules/salesforce-credentials-quick-look"
+  },
+  {
+    "title": "Trailhead Playground Management",
+    "type": "MODULE",
+    "icon": "https://res.cloudinary.com/hy4kyit2a/f_auto/fl_lossy/q_70/learn/modules/trailhead_playground_management/2f5d5c1bfd282031b928027dc61ae51e_badge.png",
+    "url": "https://trailhead.salesforce.com/content/learn/modules/trailhead_playground_management"
+  },
+  {
+    "title": "Trailblazer Community: Quick Look",
+    "type": "MODULE",
+    "icon": "https://res.cloudinary.com/hy4kyit2a/f_auto/fl_lossy/q_70/learn/modules/trailblazer-community-quick-look/5c6eaafd0f616517c0e3b53e863faba3_badge.png",
+    "url": "https://trailhead.salesforce.com/content/learn/modules/trailblazer-community-quick-look"
+  },
+  {
+    "title": "Salesforce Values: Quick Look",
+    "type": "MODULE",
+    "icon": "https://res.cloudinary.com/hy4kyit2a/f_auto/fl_lossy/q_70/learn/modules/salesforce-quick-look-1/259d8619519bb3912ef0100cee5071cc_badge.png",
+    "url": "https://trailhead.salesforce.com/content/learn/modules/salesforce-quick-look-1"
+  },
+  {
+    "title": "Salesforce Badge",
+    "type": "BADGE",
+    "icon": null,
+    "url": null
+  },
+  {
+    "title": "Your Guide to Trailhead",
+    "type": "MODULE",
+    "icon": "https://res.cloudinary.com/hy4kyit2a/f_auto/fl_lossy/q_70/learn/modules/trailhead_basics/11592ff48bc3b35bcd9945e6bde11319_badge.png",
+    "url": "https://trailhead.salesforce.com/content/learn/modules/trailhead_basics"
+  }
+];
+
+var TRAILHEAD_QUERY = 'query { profile(slug: "guruvamsikallepalli") { ... on PublicProfile { earnedAwards(first: 100) { edges { node { ... on EarnedAwardBase { award { title type icon content { webUrl } } } } } } } } }';
+
+function awardTypeLabel(type) {
+    var t = (type || 'badge').toLowerCase();
+    return t.charAt(0).toUpperCase() + t.slice(1);
+}
+
+function renderTrailblazerBadges(list) {
+    var container = document.getElementById('trailblazer-badges');
+    var countEl = document.getElementById('trailblazer-count');
+    if (!container || !Array.isArray(list)) return;
+
+    container.innerHTML = '';
+    container.dataset.cloned = '';
+
+    list.forEach(function (b) {
+        var title = b.title || 'Salesforce Badge';
+        var item = document.createElement('div');
+        item.className = 'item';
+        item.setAttribute('role', 'listitem');
+
+        var link = document.createElement('a');
+        link.href = b.url || TRAILBLAZER_PROFILE_URL;
+        link.target = '_blank';
+        link.rel = 'noopener';
+        link.title = title;
+
+        var imgWrap = document.createElement('div');
+        imgWrap.className = 'badge-img';
+        var img = document.createElement('img');
+        img.src = b.icon;
+        img.alt = awardTypeLabel(b.type) + ' - ' + title;
+        img.loading = 'lazy';
+        img.addEventListener('error', function () {
+            imgWrap.innerHTML = '<i class="bi bi-patch-check-fill"></i>';
+        });
+        imgWrap.appendChild(img);
+
+        var caption = document.createElement('span');
+        caption.className = 'badge-name';
+        caption.textContent = title;
+
+        link.appendChild(imgWrap);
+        link.appendChild(caption);
+        item.appendChild(link);
+        container.appendChild(item);
+    });
+
+    duplicateTrack(container);
+    if (countEl) countEl.textContent = list.length;
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Render static snapshot immediately, then try a live refresh.
+    renderTrailblazerBadges(trailblazerBadges);
+
+    fetch('https://profile.api.trailhead.com/graphql', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ query: TRAILHEAD_QUERY })
+    })
+        .then(function (res) { return res.json(); })
+        .then(function (data) {
+            var profile = (data && data.data && data.data.profile) || {};
+            var edges = (profile.earnedAwards && profile.earnedAwards.edges) || [];
+            if (!edges.length) return;
+            var fresh = edges.map(function (e) {
+                var n = e.node || {};
+                var a = n.award || {};
+                return {
+                    title: a.title,
+                    type: a.type,
+                    icon: a.icon,
+                    url: (a.content && a.content.webUrl) || null
+                };
+            });
+            if (fresh.length !== trailblazerBadges.length) {
+                console.log('Trailhead badges refreshed:', fresh.length);
+                renderTrailblazerBadges(fresh);
+            }
+        })
+        .catch(function () { /* keep static snapshot */ });
+});

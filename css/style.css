@@ -289,6 +289,15 @@ img { max-width: 100%; height: auto; }
 }
 .social-icons.small a { width: 36px; height: 36px; font-size: 1rem; border-radius: 10px; }
 
+/* SVG brand logos inside social chips (e.g. Salesforce) */
+.social-icons a img,
+.footer-socials a img {
+    width: auto;
+    height: 1.05em;
+    object-fit: contain;
+    display: block;
+}
+
 .call-to-action { gap: .25rem; }
 
 .btn { border-radius: 12px; font-weight: 600; transition: var(--transition); }
@@ -681,8 +690,40 @@ img { max-width: 100%; height: auto; }
     gap: .8rem;
     margin-bottom: 1.2rem;
 }
-.provider-logo { height: 34px; width: auto; }
-.provider-logo-link:hover { filter: brightness(1.2); }
+.provider-link {
+    display: inline-flex;
+    align-items: center;
+    gap: .7rem;
+    padding: .5rem 1rem;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: var(--surface-2);
+    transition: var(--transition);
+}
+.provider-link:hover {
+    border-color: var(--accent-1);
+    transform: translateY(-2px);
+    box-shadow: var(--glow);
+}
+.provider-logo { height: 28px; width: auto; }
+.provider-name {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--text);
+    transition: var(--transition);
+}
+.provider-name i {
+    font-size: .78rem;
+    color: var(--muted);
+    margin-left: .15rem;
+    transition: var(--transition);
+}
+.provider-link:hover .provider-name { color: var(--accent-1); }
+.provider-link:hover .provider-name i {
+    color: var(--accent-1);
+    transform: translate(2px, -2px);
+}
 .badge-count-pill {
     font-size: .78rem;
     padding: .35rem .8rem;
