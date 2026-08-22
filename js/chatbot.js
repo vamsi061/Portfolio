@@ -181,9 +181,41 @@
         openBtn.classList.toggle('hidden', open);
         if (open) {
             openBtn.classList.add('seen');
+            syncToKeyboard();
             setTimeout(function () { input.focus(); }, 250);
+        } else {
+            panel.style.height = '';
+            panel.style.bottom = '';
         }
     }
+
+    /* Pin the panel to the VISUAL viewport so the mobile keyboard can't
+       cover or eject it (dvh/CSS alone can't do this on iOS). */
+    function syncToKeyboard() {
+        if (!panel.classList.contains('open')) return;
+        if (window.innerWidth > 640) {           // desktop: nothing to fight
+            panel.style.height = '';
+            panel.style.bottom = '';
+            return;
+        }
+        var vv = window.visualViewport;
+        if (!vv) return;
+        var overlap = Math.max(0, window.innerHeight - vv.height - vv.offsetTop); // keyboard height
+        panel.style.height = Math.min(vv.height - 14, 560) + 'px';
+        panel.style.bottom = (overlap + (overlap > 0 ? 4 : 12)) + 'px';
+    }
+
+    (function watchKeyboard() {
+        var vv = window.visualViewport;
+        if (!vv) return;
+        vv.addEventListener('resize', syncToKeyboard);
+        vv.addEventListener('scroll', syncToKeyboard);
+        window.addEventListener('orientationchange', function () {
+            setTimeout(syncToKeyboard, 200);
+        });
+        input.addEventListener('focus', function () { setTimeout(syncToKeyboard, 120); });
+        input.addEventListener('blur', function () { setTimeout(syncToKeyboard, 200); });
+    })();
 
     function greet() {
         addMsg('bot', 'Hi there! 👋 I\'m **' + CFG.botName + '** — ' + CFG.ownerName + '\'s portfolio assistant.\n'
