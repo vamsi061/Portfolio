@@ -693,34 +693,26 @@ img { max-width: 100%; height: auto; }
 }
 .badge-count-pill i { color: var(--accent-1); }
 
-.badge-scroller-wrapper { position: relative; display: flex; align-items: center; gap: .6rem; }
-.badge-scroller {
-    display: flex;
-    gap: 1.1rem;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    padding: .4rem .2rem;
-    scrollbar-width: none;
-    flex: 1;
-}
-.badge-scroller::-webkit-scrollbar { display: none; }
-.badge-scroller .item {
-    flex: 0 0 auto;
+.badge-scroller-wrapper { position: relative; }
+
+/* Marquee auto-scroll */
+.badge-marquee { width: 100%; padding: .35rem 0; }
+.badge-marquee .item {
+    display: inline-flex;
+    vertical-align: middle;
     width: 158px;
-    scroll-snap-align: start;
+    margin-right: 1.1rem;
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: var(--radius-sm);
     padding: .85rem .8rem .75rem;
     transition: var(--transition);
 }
-.badge-scroller .item:hover {
-    transform: translateY(-5px);
+.badge-marquee .item:hover {
     border-color: color-mix(in srgb, var(--accent-1) 55%, transparent);
     box-shadow: var(--glow);
 }
-.badge-scroller .item a {
+.badge-marquee .item a {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -744,7 +736,7 @@ img { max-width: 100%; height: auto; }
     object-fit: contain;
     transition: transform .35s ease;
 }
-.badge-scroller .item:hover .badge-img img { transform: scale(1.09); }
+.badge-marquee .item:hover .badge-img img { transform: scale(1.09); }
 .badge-img i { font-size: 2rem; color: var(--accent-1); }
 .badge-name {
     font-size: .7rem;
@@ -759,23 +751,7 @@ img { max-width: 100%; height: auto; }
     min-height: 1.9em;
     transition: var(--transition);
 }
-.badge-scroller .item:hover .badge-name { color: var(--text); }
-
-.scroll-btn {
-    flex-shrink: 0;
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    border: 1px solid var(--border-strong);
-    background: var(--surface-2);
-    color: var(--text);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    transition: var(--transition);
-}
-.scroll-btn:hover { background: var(--gradient); color: #fff; border-color: transparent; }
-@media (max-width: 575.98px) { .scroll-btn { display: none; } }
+.badge-marquee .item:hover .badge-name { color: var(--text); }
 
 /* ---------- Contact ---------- */
 .contact-info-card {

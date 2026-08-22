@@ -535,9 +535,7 @@
                     <span class="badge-count-pill mono"><i class="bi bi-patch-check-fill me-1"></i><span id="credly-count">…</span> badges</span>
                 </div>
                 <div class="badge-scroller-wrapper">
-                    <button class="scroll-btn prev" data-target="credly-badges" aria-label="Scroll badges left"><i class="bi bi-chevron-left"></i></button>
-                    <div id="credly-badges" class="badge-scroller" role="list"></div>
-                    <button class="scroll-btn next" data-target="credly-badges" aria-label="Scroll badges right"><i class="bi bi-chevron-right"></i></button>
+                    <marquee id="credly-badges" class="badge-marquee" behavior="scroll" direction="left" scrollamount="3" truespeed onmouseover="this.stop()" onmouseout="this.start()" role="list" aria-label="Credly certification badges"></marquee>
                 </div>
             </div>
 
@@ -550,8 +548,7 @@
                     <span class="badge-count-pill mono"><i class="bi bi-trophy-fill me-1"></i>7 badges</span>
                 </div>
                 <div class="badge-scroller-wrapper">
-                    <button class="scroll-btn prev" data-target="google-badges" aria-label="Scroll badges left"><i class="bi bi-chevron-left"></i></button>
-                    <div id="google-badges" class="badge-scroller" role="list">
+                    <marquee id="google-badges" class="badge-marquee" behavior="scroll" direction="left" scrollamount="3" truespeed onmouseover="this.stop()" onmouseout="this.start()" role="list" aria-label="Google Developers badges">
                         <div class="item" role="listitem"><a href="https://developers.google.com/profile/badges/community/gdsc/2023/member" target="_blank" rel="noopener"><img src="https://developers.google.com/static/profile/badges/community/gdsc/2023/member/badge.svg" alt="GDSC Member" loading="lazy"></a></div>
                         <div class="item" role="listitem"><a href="https://developers.google.com/profile/badges/events/cloud/next/2022/attendee" target="_blank" rel="noopener"><img src="https://developers.google.com/static/profile/badges/events/cloud/next/2022/attendee/badge.svg" alt="Cloud Next 2022 Attendee" loading="lazy"></a></div>
                         <div class="item" role="listitem"><a href="https://developers.google.com/profile/badges/activity/android/install-android-studio" target="_blank" rel="noopener"><img src="https://developers.google.com/static/profile/badges/activity/android/install-android-studio/badge.svg" alt="Install Android Studio" loading="lazy"></a></div>
@@ -559,8 +556,7 @@
                         <div class="item" role="listitem"><a href="https://developers.google.com/profile/badges/playlists/android/android-basics-kotlin-pathway-two" target="_blank" rel="noopener"><img src="https://developers.google.com/static/profile/badges/playlists/android/android-basics-kotlin-pathway-two/android-basics-kotlin-pathway-two.svg" alt="Android Basics Kotlin" loading="lazy"></a></div>
                         <div class="item" role="listitem"><a href="https://developers.google.com/profile/badges/playlists/android/android-basics-compose-unit-5-pathway-2" target="_blank" rel="noopener"><img src="https://developers.google.com/static/profile/badges/playlists/android/android-basics-compose-unit-5-pathway-2/badge.svg" alt="Android Basics Compose Unit 5 Pathway 2" loading="lazy"></a></div>
                         <div class="item" role="listitem"><a href="https://developers.google.com/profile/badges/playlists/android/android-basics-compose-unit-5-pathway-1" target="_blank" rel="noopener"><img src="https://developers.google.com/static/profile/badges/playlists/android/android-basics-compose-unit-5-pathway-1/badge.svg" alt="Android Basics Compose Unit 5 Pathway 1" loading="lazy"></a></div>
-                    </div>
-                    <button class="scroll-btn next" data-target="google-badges" aria-label="Scroll badges right"><i class="bi bi-chevron-right"></i></button>
+                    </marquee>
                 </div>
             </div>
         </div>

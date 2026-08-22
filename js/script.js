@@ -199,15 +199,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-// ---------- Badge scrollers (scroll-snap + arrow buttons) ----------
-document.querySelectorAll('.scroll-btn').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-        var scroller = document.getElementById(btn.dataset.target);
-        if (!scroller) return;
-        var direction = btn.classList.contains('next') ? 1 : -1;
-        scroller.scrollBy({ left: direction * 280, behavior: 'smooth' });
-    });
-});
+// ---------- Badge marquees ----------
+// Auto-scroll handled natively via <marquee> tags (pause on hover).
+// Credly badges are rendered dynamically below; Google badges are static HTML.
 
 // ---------- Credly badges (vanilla fetch + fallback) ----------
 var fallbackBadges = [
