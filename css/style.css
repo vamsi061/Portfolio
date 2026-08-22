@@ -489,6 +489,8 @@ img { max-width: 100%; height: auto; }
     transition: var(--transition);
 }
 .pill img, .pill .pill-icon { width: 16px; height: 16px; object-fit: contain; }
+/* Monochrome brand logos can't inherit page color through <img>; force white on dark */
+[data-bs-theme="dark"] .pill img.logo-dark { filter: brightness(0) invert(1); }
 .pill .pill-icon { font-size: 1rem; color: var(--accent-3); }
 .pill:hover { border-color: var(--accent-1); transform: translateY(-2px); background: var(--gradient-soft); }
 .ai-note {

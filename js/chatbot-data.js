@@ -82,7 +82,7 @@ var PORTFOLIO_KNOWLEDGE = {
         languages: ['Java', 'Python', 'JavaScript', 'C', 'SQL', 'HTML', 'CSS'],
         backendIntegration: ['REST APIs', 'Solace', 'AWS SQS', 'Spring Boot', 'Django', 'MySQL'],
         devopsQuality: ['Git', 'GitHub', 'Jenkins', 'XL Deploy', 'SonarQube', 'Backstage', 'Bootstrap'],
-        aiTools: ['Claude Code', 'OpenCode', 'GitHub Copilot', 'Ollama', 'Hugging Face']
+        aiTools: ['Claude Code', 'OpenCode', 'GitHub Copilot', 'Ollama', 'Hugging Face', 'n8n']
     },
 
     certifications: {
