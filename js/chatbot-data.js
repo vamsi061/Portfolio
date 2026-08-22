@@ -31,7 +31,7 @@ var PORTFOLIO_KNOWLEDGE = {
         tenure: '2024 — Present',
         location: 'Vijayawada, Andhra Pradesh, India',
         email: 'guruvamsi061@gmail.com',
-        summary: 'Backend-focused developer building and testing enterprise REST APIs, working with event-driven messaging (Solace, AWS SQS), raising code quality with SonarQube, and shipping releases through Jenkins and XL Deploy pipelines.'
+        summary: 'Builds secure, scalable backend systems — RESTful APIs, microservices, enterprise messaging with Solace & AWS SQS, cloud technologies and automated CI/CD through Jenkins & XL Deploy. Also engineers developer platforms with Backstage (reusable software templates) and creates open-source tools that streamline developer workflows.'
     },
 
     socials: {
@@ -54,6 +54,7 @@ var PORTFOLIO_KNOWLEDGE = {
                 'Built and validated 11+ RESTful API integrations for message production/consumption via Solace and AWS SQS.',
                 'Performed functional testing ensuring secure message delivery to authorized users only.',
                 'Improved code quality and coverage using SonarQube quality gates.',
+                'Engineered reusable Backstage software templates providing ready-to-use project structures that accelerate standardized microservices development.',
                 'Supported CI/CD by managing deployments through Jenkins and XL Deploy.'
             ]
         },
@@ -80,7 +81,7 @@ var PORTFOLIO_KNOWLEDGE = {
     skills: {
         languages: ['Java', 'Python', 'JavaScript', 'C', 'SQL', 'HTML', 'CSS'],
         backendIntegration: ['REST APIs', 'Solace', 'AWS SQS', 'Spring Boot', 'Django', 'MySQL'],
-        devopsQuality: ['Git', 'GitHub', 'Jenkins', 'XL Deploy', 'SonarQube', 'Bootstrap'],
+        devopsQuality: ['Git', 'GitHub', 'Jenkins', 'XL Deploy', 'SonarQube', 'Backstage', 'Bootstrap'],
         aiTools: ['Claude Code', 'OpenCode', 'GitHub Copilot', 'Ollama', 'Hugging Face']
     },
 
