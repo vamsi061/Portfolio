@@ -306,7 +306,8 @@ document.addEventListener('DOMContentLoaded', function () {
     var targetUrl = encodeURIComponent('https://www.credly.com/users/' + credlyUser + '/badges.json');
     var proxies = [
         'https://api.codetabs.com/v1/proxy?quest=',
-        'https://api.allorigins.win/raw?url='
+        'https://api.allorigins.win/raw?url=',
+        'https://corsproxy.io/?url='
     ];
 
     // Render fallback immediately so the section is never empty

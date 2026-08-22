@@ -164,11 +164,20 @@ img { max-width: 100%; height: auto; }
 }
 #header.fixed-top {
     position: fixed;
+    border-bottom: 1px solid var(--border);
+    box-shadow: var(--shadow);
+}
+/* Glass blur lives on a pseudo-element: putting backdrop-filter on the header
+   itself would make it the containing block for the fixed-positioned mobile
+   drawer and clip it to the navbar height. */
+#header.fixed-top::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
     background: color-mix(in srgb, var(--bg) 78%, transparent);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
-    border-bottom: 1px solid var(--border);
-    box-shadow: var(--shadow);
 }
 .navbar { padding-top: 0; padding-bottom: 0; min-height: var(--nav-height); }
 

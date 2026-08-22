@@ -73,11 +73,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="css/bootstrap.min.css?v=20260822e">
-    <link rel="stylesheet" href="css/bootstrap-icons.min.css?v=20260822e">
-    <link rel="stylesheet" href="css/aos.css?v=20260822e">
-    <link rel="stylesheet" href="css/style.css?v=20260822e">
-    <link rel="stylesheet" href="css/chatbot.css?v=20260822e">
+    <link rel="stylesheet" href="css/bootstrap.min.css?v=20260822g">
+    <link rel="stylesheet" href="css/bootstrap-icons.min.css?v=20260822g">
+    <link rel="stylesheet" href="css/aos.css?v=20260822g">
+    <link rel="stylesheet" href="css/style.css?v=20260822g">
+    <link rel="stylesheet" href="css/chatbot.css?v=20260822g">
 
     <!-- Analytics -->
     <script type="text/javascript">
@@ -103,32 +103,32 @@
             <div class="container">
                 <a href="#home" class="navbar-brand logo">
                     <span>&lt;</span><span class="logo-name">GuruVamsi</span><span>/&gt;</span>
-                </a>                <button class="btn border-0 order-md-last" id="switchTheme" aria-label="Toggle color theme"><i class="bi bi-brightness-high-fill"></i></button>
+                </a>
+    <!-- Mobile navigation drawer (body-level so position:fixed always maps to the viewport) -->
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+                <a href="#home" class="offcanvas-title navbar-brand logo" id="offcanvasNavbarLabel">
+                    <span>&lt;</span><span class="logo-name">GuruVamsi</span><span>/&gt;</span>
+                </a>
+                <button type="button" class="navbar-toggler border-0" data-bs-dismiss="offcanvas" aria-label="Close navigation menu"><i class="bi bi-x-lg toggle-icon"></i></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav nav-underline justify-content-end flex-grow-1">
+                    <li class="nav-item" data-bs-dismiss="offcanvas"><a href="#home" class="nav-link active" aria-current="page">Home</a></li>
+                    <li class="nav-item" data-bs-dismiss="offcanvas"><a href="#about" class="nav-link">About</a></li>
+                    <li class="nav-item" data-bs-dismiss="offcanvas"><a href="#skills" class="nav-link">Skills</a></li>
+                    <li class="nav-item" data-bs-dismiss="offcanvas"><a href="#experience" class="nav-link">Experience</a></li>
+                    <li class="nav-item" data-bs-dismiss="offcanvas"><a href="#projects" class="nav-link">Projects</a></li>
+                    <li class="nav-item" data-bs-dismiss="offcanvas"><a href="#certifications" class="nav-link">Certifications</a></li>
+                    <li class="nav-item" data-bs-dismiss="offcanvas"><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+        </div>                <button class="btn border-0 order-md-last" id="switchTheme" aria-label="Toggle color theme"><i class="bi bi-brightness-high-fill"></i></button>
                 <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation menu"><i class="bi bi-list toggle-icon"></i></button>
             </div>
         </nav>
     </header>
 
-    <!-- Mobile navigation drawer (body-level so position:fixed always maps to the viewport) -->
-                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                    <div class="offcanvas-header">
-                        <a href="#home" class="offcanvas-title navbar-brand logo" id="offcanvasNavbarLabel">
-                            <span>&lt;</span><span class="logo-name">GuruVamsi</span><span>/&gt;</span>
-                        </a>
-                        <button type="button" class="navbar-toggler border-0" data-bs-dismiss="offcanvas" aria-label="Close navigation menu"><i class="bi bi-x-lg toggle-icon"></i></button>
-                    </div>
-                    <div class="offcanvas-body">
-                        <ul class="navbar-nav nav-underline justify-content-end flex-grow-1">
-                            <li class="nav-item" data-bs-dismiss="offcanvas"><a href="#home" class="nav-link active" aria-current="page">Home</a></li>
-                            <li class="nav-item" data-bs-dismiss="offcanvas"><a href="#about" class="nav-link">About</a></li>
-                            <li class="nav-item" data-bs-dismiss="offcanvas"><a href="#skills" class="nav-link">Skills</a></li>
-                            <li class="nav-item" data-bs-dismiss="offcanvas"><a href="#experience" class="nav-link">Experience</a></li>
-                            <li class="nav-item" data-bs-dismiss="offcanvas"><a href="#projects" class="nav-link">Projects</a></li>
-                            <li class="nav-item" data-bs-dismiss="offcanvas"><a href="#certifications" class="nav-link">Certifications</a></li>
-                            <li class="nav-item" data-bs-dismiss="offcanvas"><a href="#contact" class="nav-link">Contact</a></li>
-                        </ul>
-                    </div>
-                </div>
 
     <!-- Hero -->
     <section id="home">
@@ -701,13 +701,13 @@
 
     <!-- AI Chatbot -->
     <div id="chatbot-root"></div>
-    <script src="js/chatbot-data.js?v=20260822e" defer></script>
-    <script src="js/chatbot.js?v=20260822e" defer></script>
+    <script src="js/chatbot-data.js?v=20260822g" defer></script>
+    <script src="js/chatbot.js?v=20260822g" defer></script>
 
     <!-- JavaScript -->
-    <script src="js/bootstrap.min.js?v=20260822e" defer></script>
-    <script src="js/aos.js?v=20260822e" defer></script>
+    <script src="js/bootstrap.min.js?v=20260822g" defer></script>
+    <script src="js/aos.js?v=20260822g" defer></script>
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js" defer></script>
-    <script src="js/script.js?v=20260822e" defer></script>
+    <script src="js/script.js?v=20260822g" defer></script>
 </body>
 </html>
