@@ -89,7 +89,8 @@ var PORTFOLIO_KNOWLEDGE = {
         { name: 'Missing Person Finder', stack: ['Android', 'Java', 'Mobile App'], desc: 'User-friendly Android application that helps report and search for missing persons.', link: 'https://github.com/vamsi061/Missing-Person' },
         { name: 'Bus Ticket Booking (HappyJourney)', stack: ['Django', 'HTML/CSS', 'Web App'], desc: 'Bus ticket booking web application designed with Django.', link: 'https://github.com/vamsi061/HappyJourney' },
         { name: 'Mobile Price Classification', stack: ['Machine Learning', 'Python', 'SVM · Random Forest'], desc: 'Classified mobile price ranges using SVM, Random Forest and other algorithms during the YBI Foundation internship.', link: 'LinkedIn post linked on the project card' },
-        { name: 'Heart Disease Prediction', stack: ['Machine Learning', 'KNN', 'Healthcare'], desc: 'Predicts heart disease using the K-Nearest Neighbors algorithm.', link: 'LinkedIn post linked on the project card' }
+        { name: 'Heart Disease Prediction', stack: ['Machine Learning', 'KNN', 'Healthcare'], desc: 'Predicts heart disease using the K-Nearest Neighbors algorithm.', link: 'LinkedIn post linked on the project card' },
+        { name: 'Twinglish Keyboard', stack: ['Android', 'Keyboard App'], desc: 'An open-source Android keyboard that suggests Telugu words while you type in English, making Telugu-English conversations effortless.', link: 'https://github.com/vamsi061/twinglish-keyboard' }
     ],
 
     faqs: {
