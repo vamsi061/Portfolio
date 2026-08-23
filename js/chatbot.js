@@ -159,11 +159,28 @@
         input = $('.chat-input', panel);
         sendBtn = $('.chat-send', panel);
 
-        ['What are your skills?', 'Show me your projects', 'Tell me about your experience', 'Send an email to Vamsi'].forEach(function (q) {
+        // Suggestion chips. On desktop the row auto-scrolls (CSS marquee),
+        // so we duplicate the set once for a seamless loop; clones stay
+        // hidden on mobile where chips simply wrap.
+        var chipRow = $('.chat-chips', panel);
+        var questions = ['What are your skills?', 'Show me your projects', 'Tell me about your experience', 'Send an email to Vamsi'];
+        var chipTrack = el('div', 'chat-track');
+        questions.forEach(function (q) {
             var chip = el('button', 'chat-chip', esc(q));
+            chip.type = 'button';
+            chip.dataset.q = q;
             chip.addEventListener('click', function () { sendMessage(q); });
-            $('.chat-chips', panel).appendChild(chip);
+            chipTrack.appendChild(chip);
         });
+        questions.forEach(function (q) {
+            var clone = el('button', 'chat-chip chip-clone', esc(q));
+            clone.type = 'button';
+            clone.setAttribute('aria-hidden', 'true');
+            clone.tabIndex = -1;
+            clone.addEventListener('click', function () { sendMessage(q); });
+            chipTrack.appendChild(clone);
+        });
+        chipRow.appendChild(chipTrack);
 
         openBtn.addEventListener('click', togglePanel);
         $('[data-act="close"]', panel).addEventListener('click', togglePanel);
