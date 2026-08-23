@@ -656,6 +656,9 @@ img { max-width: 100%; height: auto; }
     display: block;
 }
 .project-card:hover .banner { transform: scale(1.06); }
+/* Portrait banners: anchor the crop to the top where the key content sits */
+.banner.banner-top { object-position: top; }
+.project-card:hover .banner.banner-top { transform: scale(1.06) translateY(-2%); }
 
 .project-card .card-body { padding: 1.25rem 1.4rem 1.4rem; }
 .project-title { font-size: 1.12rem; margin: 0; }
