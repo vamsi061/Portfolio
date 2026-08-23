@@ -224,7 +224,7 @@
             + 'You can ask me about:\n'
             + '- His skills & daily tech stack\n'
             + '- Experience & education\n'
-            + '- Projects and certifications (77+ badges!)\n'
+            + '- Projects and certifications\n'
             + '- Or say **\"send an email\"** and I\'ll draft one for him');
     }
 
