@@ -51,18 +51,20 @@ var PORTFOLIO_KNOWLEDGE = {
             org: 'Infosys',
             period: '2024 — Present',
             points: [
-                'Built and validated 11+ RESTful API integrations for message production/consumption via Solace and AWS SQS.',
-                'Performed functional testing ensuring secure message delivery to authorized users only.',
-                'Improved code quality and coverage using SonarQube quality gates.',
-                'Engineered reusable Backstage software templates providing ready-to-use project structures that accelerate standardized microservices development.',
-                'Supported CI/CD by managing deployments through Jenkins and XL Deploy.'
+                'Built and maintained reusable messaging frameworks for Solace and AWS SQS, implementing publisher and consumer components to facilitate reliable event-driven communication and queue-based message processing.',
+                'Developed and maintained a reusable OAuth2 Resource Server library to standardize JWT-based authentication and authorization across enterprise microservices, ensuring secure access to protected REST APIs.',
+                'Designed and developed enterprise-grade backend applications using Spring Boot, RESTful APIs, and microservices architecture, while contributing to CI/CD automation and code quality improvements.',
+                'Developed, maintained, and upgraded shared libraries, software components, and reusable templates to support the latest Spring Boot and Spring Framework releases.'
             ]
         },
         {
             title: 'Android Developer (community)',
             org: 'GDSC — VR Siddhartha Engineering College',
             period: '2023 — 2024',
-            points: ['Helped peers learn Android development fundamentals in the Google Developer Student Clubs community.']
+            points: [
+                'Led hands-on workshops and mentoring sessions within the Google Developer Student Clubs community, guiding peers through Android development fundamentals and mobile application best practices.',
+                'Collaborated with cross-functional teams to organize technical events and hackathons, fostering a culture of innovation and continuous learning among 200+ student developers on campus.'
+            ]
         }
     ],
 
@@ -81,7 +83,7 @@ var PORTFOLIO_KNOWLEDGE = {
 
     certifications: {
         credly: { count: 18, provider: 'Credly', highlights: ['AWS Associate Cloud Engineer', 'Microsoft Azure Fundamentals', 'Cisco CyberOps Associate', 'CCNA: Introduction to Networks', 'CCNA: Switching, Routing & Wireless Essentials', 'Google Cloud Computing Foundations'] },
-        googleDevelopers: { count: 7, provider: 'Google Developers (g.dev)', highlights: ['GDSC Member', 'Cloud Next 2022 Attendee', 'Android Basics pathways', 'Gemini API Competition'] },
+        googleDevelopers: { count: 10, provider: 'Google Developers (g.dev)', highlights: ['GDSC Member', 'Cloud Innovators Plus', 'Cloud Next 2022 Attendee', 'Gemini API Competition', 'Android Basics Compose pathways', 'Skills Boost'] },
         trailhead: { count: 52, provider: 'Salesforce Trailhead', breakdown: '13 Superbadges, 31 Modules, 6 Projects, 2 Badges', superbadgeHighlights: ['Developer Super Set', 'Process Automation Specialist', 'Screen Flow Specialist'] }
     },
 
