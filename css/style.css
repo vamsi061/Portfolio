@@ -611,6 +611,21 @@ img { max-width: 100%; height: auto; }
 .external-link { font-size: .8rem; color: var(--accent-3); margin-left: .3rem; }
 .external-link:hover { color: var(--accent-1); }
 .timeline-meta { color: var(--accent-3); font-size: .78rem; margin-bottom: 0; }
+.timeline-org { color: var(--accent-3); font-size: .78rem; margin-bottom: .25rem; }
+.timeline-chips { display: flex; flex-wrap: wrap; gap: .35rem; margin-top: .25rem; }
+.timeline-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: .3rem;
+    font-size: .7rem;
+    padding: .2rem .6rem;
+    border-radius: 999px;
+    color: var(--muted);
+    background: color-mix(in srgb, var(--muted) 8%, transparent);
+    border: 1px solid color-mix(in srgb, var(--muted) 20%, transparent);
+}
+.timeline-chip i { font-size: .68rem; color: var(--accent-3); }
+.timeline-chips .score-pill { margin-top: 0; }
 .score-pill {
     display: inline-flex;
     align-items: center;
