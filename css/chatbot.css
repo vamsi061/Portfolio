@@ -198,37 +198,34 @@
    Mobile: wrap so every chip stays visible.
    Desktop (>=768px): seamless auto-scrolling marquee (duplicated track,
    pauses on hover/focus). */
+/* Suggestion chips auto-scroll on ALL screens: duplicated seamless track,
+   pauses on hover/focus; manual swipe still works between pauses. */
 .chat-chips {
     display: flex;
-    flex-wrap: wrap;
-    gap: .45rem;
+    overflow: hidden;
     padding: .6rem .85rem;
     flex-shrink: 0;
     border-top: 1px dashed var(--border);
 }
-.chat-track { display: contents; }
-.chat-chip.chip-clone { display: none; }
-
-@media (min-width: 768px) {
-    .chat-chips { flex-wrap: nowrap; overflow: hidden; }
-    .chat-track {
-        display: flex;
-        align-items: center;
-        width: max-content;
-        animation: chipMarquee 24s linear infinite;
-    }
-    .chat-track .chat-chip { margin-right: .45rem; }
-    .chat-track .chat-chip.chip-clone { display: inline-flex; }
-    .chat-chips:hover .chat-track,
-    .chat-chips:focus-within .chat-track { animation-play-state: paused; }
-    @keyframes chipMarquee {
-        from { transform: translateX(0); }
-        to   { transform: translateX(-50%); }
-    }
+.chat-track {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    animation: chipMarquee 22s linear infinite;
+}
+.chat-track .chat-chip { margin-right: .45rem; flex-shrink: 0; }
+.chat-chip.chip-clone { display: inline-flex; }
+.chat-chips:hover .chat-track,
+.chat-chips:focus-within .chat-track,
+.chat-track:hover { animation-play-state: paused; }
+@keyframes chipMarquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
 }
 @media (prefers-reduced-motion: reduce) {
-    .chat-track { animation: none !important; flex-wrap: wrap; width: auto; }
-    .chat-track .chat-chip.chip-clone { display: none; }
+    .chat-track { animation: none !important; }
+    .chat-chips { overflow-x: auto; scrollbar-width: none; }
+    .chat-chips::-webkit-scrollbar { display: none; }
 }
 .chat-chip {
     flex-shrink: 0;
