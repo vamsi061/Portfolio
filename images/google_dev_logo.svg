@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" width="400" height="100">
+  <style>
+    .text { font-family: sans-serif; font-weight: bold; font-size: 50px; fill: #5f6368; }
+    .g-blue { fill: #4285F4; }
+    .g-red { fill: #EA4335; }
+    .g-yellow { fill: #FBBC05; }
+    .g-green { fill: #34A853; }
+  </style>
+  <rect width="400" height="100" fill="none"/>
+  <path class="g-blue" d="M40 20 L20 40 L40 60 L60 40 Z" />
+  <path class="g-green" d="M60 40 L80 60 L60 80 L40 60 Z" />
+  <text x="100" y="65" class="text">Google Developers</text>
+</svg>

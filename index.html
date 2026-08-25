@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="lpQm380dHPlhSeUxWXSpxZ-mwQUegD2YLWvM21dcB-A" />
+
+    <!-- Primary Meta Tags -->
+    <title>Guru Vamsi — Backend Engineer</title>
+    <meta name="title" content="Guru Vamsi — Backend Engineer">
+    <meta name="description" content="Guru Vamsi, a Software Developer specializing in REST API integrations, enterprise messaging (Solace, AWS SQS) and CI/CD. Explore my projects, experience and certifications.">
+    <meta name="keywords" content="Guru Vamsi, Backend Engineer, Software Developer, REST API, Java, Python, Portfolio">
+    <meta name="author" content="Guru Vamsi">
+    <link rel="canonical" href="https://vamsi061.github.io/Portfolio/">
+
+    <!-- Open Graph Meta Tags / Facebook -->
+    <meta property="og:title" content="Guru Vamsi — Backend Engineer">
+    <meta property="og:description" content="Software Developer specializing in REST API integrations, enterprise messaging and CI/CD.">
+    <meta property="og:image" content="https://vamsi061.github.io/Portfolio/images/portrait.webp">
+    <meta property="og:url" content="https://vamsi061.github.io/Portfolio/">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Guru Vamsi — Backend Engineer">
+    <meta name="twitter:description" content="Software Developer specializing in REST API integrations, enterprise messaging and CI/CD.">
+    <meta name="twitter:image" content="https://vamsi061.github.io/Portfolio/images/portrait.webp">
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/logo.ico" type="image/x-icon">
+
+    <!-- Restore saved accent color before first paint -->
+    <script>
+    (function () {
+        try {
+            var map = {
+                violet:  ['#6366f1', '#a855f7', '#22d3ee'],
+                ocean:   ['#3b82f6', '#06b6d4', '#38bdf8'],
+                emerald: ['#10b981', '#14b8a6', '#6ee7b7'],
+                sunset:  ['#f97316', '#ef4444', '#fbbf24'],
+                rose:    ['#ec4899', '#d946ef', '#f9a8d4']
+            };
+            var c = map[localStorage.getItem('themeColor')] || map.violet;
+            var s = document.documentElement.style;
+            s.setProperty('--accent-1', c[0]);
+            s.setProperty('--accent-2', c[1]);
+            s.setProperty('--accent-3', c[2]);
+        } catch (e) {}
+    })();
+    </script>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Guru Vamsi",
+      "jobTitle": "Software Developer",
+      "url": "https://vamsi061.github.io/Portfolio/",
+      "email": "mailto:guruvamsi061@gmail.com",
+      "address": { "@type": "PostalAddress", "addressLocality": "Vijayawada", "addressRegion": "Andhra Pradesh", "addressCountry": "IN" },
+      "sameAs": [
+        "https://github.com/vamsi061/",
+        "https://www.linkedin.com/in/vamsi061/",
+        "https://twitter.com/guruvamsi061/"
+      ],
+      "alumniOf": { "@type": "CollegeOrUniversity", "name": "VR Siddhartha Engineering College" }
+    }
+    </script>
+
+    <!-- Fonts: Sora (headings), Inter (body), JetBrains Mono (code) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/bootstrap.min.css?v=20260822q">
+    <link rel="stylesheet" href="css/bootstrap-icons.min.css?v=20260822q">
+    <link rel="stylesheet" href="css/aos.css?v=20260822q">
+    <link rel="stylesheet" href="css/style.css?v=20260822q">
+    <link rel="stylesheet" href="css/chatbot.css?v=20260822q">
+
+    <!-- Analytics -->
+    <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "ld2h640kif");
+    </script>
+</head>
+
+<body data-bs-theme="dark">
+
+    <!-- Preloader -->
+    <div id="preloader"><span class="preloader-logo">&lt;<b>GV</b>/&gt;</span></div>
+
+    <!-- Animated background particles -->
+    <div id="particles-canvas" aria-hidden="true"></div>
+
+    <!-- Header -->
+    <header id="header">
+        <nav id="navbar" class="navbar navbar-expand-md">
+            <div class="container">
+                <a href="#home" class="navbar-brand logo">
+                    <span>&lt;</span><span class="logo-name">GuruVamsi</span><span>/&gt;</span>
+                </a>
+    <!-- Mobile navigation drawer (body-level so position:fixed always maps to the viewport) -->
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+                <a href="#home" class="offcanvas-title navbar-brand logo" id="offcanvasNavbarLabel">
+                    <span>&lt;</span><span class="logo-name">GuruVamsi</span><span>/&gt;</span>
+                </a>
+                <button type="button" class="navbar-toggler border-0" data-bs-dismiss="offcanvas" aria-label="Close navigation menu"><i class="bi bi-x-lg toggle-icon"></i></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav nav-underline justify-content-end flex-grow-1">
+                    <li class="nav-item" data-bs-dismiss="offcanvas"><a href="#home" class="nav-link active" aria-current="page">Home</a></li>
+                    <li class="nav-item" data-bs-dismiss="offcanvas"><a href="#about" class="nav-link">About</a></li>
+                    <li class="nav-item" data-bs-dismiss="offcanvas"><a href="#skills" class="nav-link">Skills</a></li>
+                    <li class="nav-item" data-bs-dismiss="offcanvas"><a href="#experience" class="nav-link">Experience</a></li>
+                    <li class="nav-item" data-bs-dismiss="offcanvas"><a href="#projects" class="nav-link">Projects</a></li>
+                    <li class="nav-item" data-bs-dismiss="offcanvas"><a href="#certifications" class="nav-link">Certifications</a></li>
+                    <li class="nav-item" data-bs-dismiss="offcanvas"><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+        </div>                <button class="btn border-0 order-md-last" id="switchTheme" aria-label="Toggle color theme"><i class="bi bi-brightness-high-fill"></i></button>
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation menu"><i class="bi bi-list toggle-icon"></i></button>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- Hero -->
+    <section id="home">
+        <div class="container">
+            <div class="row hero-content align-items-center gy-5">
+                <div class="col-lg-7 order-lg-1">
+                    <p class="hero-greet mono" data-aos="fade-up">Hi, my name is</p>
+                    <h1 class="hero-name" data-aos="fade-up" data-aos-delay="100">Guru <span class="gradient-text">Vamsi</span></h1>
+                    <div class="hero-role mono" data-aos="fade-up" data-aos-delay="200">
+                        <span class="typing-text"></span><span class="cursor">|</span>
+                    </div>
+                    <p class="tagline" data-aos="fade-up" data-aos-delay="300">
+                        Creating open-source tools and developer-focused solutions that solve real-world
+                        problems, streamline workflows, and turn innovative ideas into practical software.
+                    </p>
+                    <div class="social-icons" data-aos="fade-up" data-aos-delay="400">
+                        <a href="https://github.com/vamsi061/" target="_blank" rel="noopener" class="github" aria-label="GitHub"><i class="bi bi-github"></i></a>
+                        <a href="https://www.linkedin.com/in/vamsi061/" target="_blank" rel="noopener" class="linkedin" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://twitter.com/guruvamsi061/" target="_blank" rel="noopener" class="twitter-x" aria-label="Twitter / X"><i class="bi bi-twitter-x"></i></a>
+                        <a href="mailto:guruvamsi061@gmail.com" class="email" aria-label="Email"><i class="bi bi-envelope"></i></a>
+                    </div>
+                    <div class="d-flex flex-wrap call-to-action" data-aos="fade-up" data-aos-delay="500">
+                        <a href="#contact"><button type="button" class="btn primary-bg-btn me-3 mb-2"><i class="bi bi-envelope"></i> Get In Touch</button></a>
+                        <a href="./Resume.pdf" target="_blank" rel="noopener"><button type="button" class="btn secondary-bg-btn mb-2">Download Resume <i class="bi bi-download"></i></button></a>
+                    </div>
+                </div>
+                <div class="col-lg-5 order-lg-2">
+                    <div class="hero-portrait" data-aos="zoom-in" data-aos-delay="200">
+                        <img src="images/portrait.webp" alt="Portrait of Guru Vamsi" class="pic" width="420" height="420">
+                        <div class="floating-chip chip-1 mono"><i class="bi bi-diagram-3"></i> 11+ API Integrations</div>
+                        <div class="floating-chip chip-2 mono"><i class="bi bi-patch-check-fill"></i> 18+ Certifications</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats strip -->
+            <div class="stats-strip" data-aos="fade-up" data-aos-delay="150">
+                <div class="stat">
+                    <span class="stat-number gradient-text">11+</span>
+                    <span class="stat-label">REST APIs Integrated</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number gradient-text">18+</span>
+                    <span class="stat-label">Cloud Certifications</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number gradient-text">10+</span>
+                    <span class="stat-label">Projects Built</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number gradient-text">2+</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me -->
+    <section id="about">
+        <div class="container">
+            <p class="section-kicker mono text-center" data-aos="fade-up">// who am I?</p>
+            <h2 class="section-heading text-center" data-aos="fade-up">About Me</h2>
+            <div class="row justify-content-center align-items-center mt-5 gy-4">
+                <div class="col-lg-5 about-portrait" data-aos="fade-right">
+                    <img src="images/portrait.webp" class="img-fluid pic" alt="About me portrait" loading="lazy" width="480" height="480">
+                </div>
+                <div class="col-lg-7" data-aos="fade-left">
+                    <p class="bio">
+                        I'm <strong>Guru Vamsi</strong>, a Software Developer from Vijayawada, India, with a background
+                        in Computer Science and a passion for building reliable, scalable software. My work spans RESTful API development,
+                        microservices, enterprise messaging, and developer platform engineering.
+                    </p>
+                    <p class="bio mb-4">
+                        Beyond professional development, I explore Artificial Intelligence, machine learning,
+                        Android development, automation, and AI-assisted development with
+                        <strong>Claude Code</strong>. I'm also passionate about building open-source tools and
+                        experimental projects that solve real-world problems, improve developer workflows, and turn
+                        ideas into practical software. Many of these projects and experiments are available on my
+                        <a href="https://github.com/vamsi061/" target="_blank" rel="noopener" class="bio-link">GitHub</a>.
+                    </p>
+                    <div class="fact-chips">
+                        <span class="chip mono"><i class="bi bi-geo-alt"></i> Vijayawada, IN</span>
+                        <span class="chip mono"><i class="bi bi-mortarboard"></i> B.Tech CSE</span>
+                        <span class="chip mono"><i class="bi bi-code-slash"></i> Backend Focus</span>
+                        <span class="chip mono"><i class="bi bi-translate"></i> English · Telugu · Hindi</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+        <div class="container">
+            <p class="section-kicker mono text-center" data-aos="fade-up">// what do I work with?</p>
+            <h2 class="section-heading text-center" data-aos="fade-up">Skills &amp; Tools</h2>
+            <p class="text-center muted-text mt-3 mb-5" data-aos="fade-up">Technologies I use day-to-day, grouped by what they do best.</p>
+
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up">
+                    <div class="skill-card">
+                        <div class="skill-card-head">
+                            <i class="bi bi-braces-asterisk skill-card-icon"></i>
+                            <h3>Languages</h3>
+                        </div>
+                        <div class="skill-pills">
+                            <span class="pill"><img src="images/java.png" alt="" loading="lazy">Java</span>
+                            <span class="pill"><img src="images/Python.svg" alt="" loading="lazy">Python</span>
+                            <span class="pill"><img src="images/JS.svg" alt="" loading="lazy">JavaScript</span>
+                            <span class="pill"><img src="images/C.svg" alt="" loading="lazy">C</span>
+                            <span class="pill"><img src="images/mysql.png" alt="" loading="lazy">SQL</span>
+                            <span class="pill"><img src="images/HTML.svg" alt="" loading="lazy">HTML</span>
+                            <span class="pill"><img src="images/CSS.svg" alt="" loading="lazy">CSS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="skill-card featured">
+                        <div class="skill-card-head">
+                            <i class="bi bi-gear-wide-connected skill-card-icon"></i>
+                            <h3>Backend &amp; Integration</h3>
+                        </div>
+                        <div class="skill-pills">
+                            <span class="pill"><i class="bi bi-api pill-icon"></i>REST APIs</span>
+                            <span class="pill"><i class="bi bi-diagram-3 pill-icon"></i>Solace</span>
+                            <span class="pill"><i class="bi bi-cloud-arrow-up pill-icon"></i>AWS SQS</span>
+                            <span class="pill"><img src="images/skills/springboot.svg" alt="" loading="lazy">Spring Boot</span>
+                            <span class="pill"><img src="images/skills/django.svg" class="logo-dark" alt="" loading="lazy">Django</span>
+                            <span class="pill"><img src="images/mysql.png" alt="" loading="lazy">MySQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="skill-card">
+                        <div class="skill-card-head">
+                            <i class="bi bi-infinity skill-card-icon"></i>
+                            <h3>DevOps &amp; Quality</h3>
+                        </div>
+                        <div class="skill-pills">
+                            <span class="pill"><img src="images/skills/git.svg" alt="" loading="lazy">Git</span>
+                            <span class="pill"><img src="images/skills/github.svg" class="logo-dark" alt="" loading="lazy">GitHub</span>
+                            <span class="pill"><img src="images/skills/jenkins.svg" alt="" loading="lazy">Jenkins</span>
+                            <span class="pill"><i class="bi bi-box-seam pill-icon"></i>XL Deploy</span>
+                            <span class="pill"><img src="images/skills/sonar.svg" alt="" loading="lazy">SonarQube</span>
+                            <span class="pill"><img src="images/skills/backstage.svg" alt="" loading="lazy">Backstage</span>
+                            <span class="pill"><img src="images/Bootstrap.svg" alt="" loading="lazy">Bootstrap</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="skill-card featured">
+                        <div class="skill-card-head">
+                            <i class="bi bi-stars skill-card-icon"></i>
+                            <h3>AI Tools &amp; Workflow</h3>
+                        </div>
+                        <div class="skill-pills">
+                            <span class="pill"><img src="images/skills/claude.svg" alt="" loading="lazy">Claude Code</span>
+                            <span class="pill"><img src="images/skills/opencode.svg" class="logo-dark" alt="" loading="lazy">OpenCode</span>
+                            <span class="pill"><img src="images/skills/githubcopilot.svg" class="logo-dark" alt="" loading="lazy">Copilot</span>
+                            <span class="pill"><img src="images/skills/ollama.svg" class="logo-dark" alt="" loading="lazy">Ollama</span>
+                            <span class="pill"><img src="images/skills/huggingface.svg" alt="" loading="lazy">Hugging Face</span>
+                            <span class="pill"><img src="images/skills/n8n.svg" alt="" loading="lazy">n8n</span>
+                        </div>
+                        <p class="ai-note">Daily drivers for AI-assisted development — coding agents, local LLMs and open-source tooling.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience & Education -->
+    <section id="experience">
+        <div class="container">
+            <p class="section-kicker mono text-center" data-aos="fade-up">// where I've worked &amp; studied</p>
+            <h2 class="section-heading text-center" data-aos="fade-up">Experience &amp; Education</h2>
+
+            <div class="row mt-5 gy-5">
+                <div class="col-lg-6">
+                    <h3 class="timeline-title" data-aos="fade-right"><i class="bi bi-briefcase-fill me-2"></i>Experience</h3>
+                    <div class="timeline">
+                        <article class="timeline-item" data-aos="fade-up">
+                            <div class="timeline-dot"><i class="bi bi-briefcase-fill"></i></div>
+                            <div class="timeline-card">
+                                <div class="timeline-card-head">
+                                    <span class="company-logo"><img src="images/infosys.svg" alt="Infosys logo" loading="lazy"></span>
+                                    <div>
+                                        <h4>Software Developer</h4>
+                                        <p class="timeline-org mono">Infosys</p>
+                                        <div class="timeline-chips mono">
+                                            <span class="timeline-chip"><i class="bi bi-geo-alt-fill"></i>Hyderabad</span>
+                                            <span class="timeline-chip"><i class="bi bi-calendar3"></i>2024 — Present</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <ul class="timeline-points">
+                                    <li>Built and maintained reusable messaging frameworks for Solace and AWS SQS, implementing publisher and consumer components to facilitate reliable event-driven communication and queue-based message processing.</li>
+                                    <li>Developed and maintained a reusable OAuth2 Resource Server library to standardize JWT-based authentication and authorization across enterprise microservices, ensuring secure access to protected REST APIs.</li>
+                                    <li>Designed and developed enterprise-grade backend applications using Spring Boot, RESTful APIs, and microservices architecture, while contributing to CI/CD automation and code quality improvements.</li>
+                                    <li>Developed, maintained, and upgraded shared libraries, software components, and reusable templates to support the latest Spring Boot and Spring Framework releases.</li>
+                                </ul>
+                            </div>
+                        </article>
+                        <article class="timeline-item" data-aos="fade-up">
+                            <div class="timeline-dot"><i class="bi bi-android2"></i></div>
+                            <div class="timeline-card">
+                                <div class="timeline-card-head">
+                                    <div>
+                                        <h4>Android Developer <a href="https://gdsc.community.dev/events/details/developer-student-clubs-velagapudi-ramakrishna-siddhartha-engineering-college-vijayawada-india-presents-droidstart-intro-to-android-app-development/" target="_blank" rel="noopener" aria-label="GDSC DroidStart event"><i class="bi bi-box-arrow-up-right external-link"></i></a></h4>
+                                        <p class="timeline-org mono">GDSC · VR Siddhartha Engineering College</p>
+                                        <div class="timeline-chips mono">
+                                            <span class="timeline-chip"><i class="bi bi-geo-alt-fill"></i>Vijayawada</span>
+                                            <span class="timeline-chip"><i class="bi bi-calendar3"></i>2023 — 2024</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <ul class="timeline-points">
+                                    <li>Led hands-on workshops and mentoring sessions within the Google Developer Student Clubs community, guiding peers through Android development fundamentals and mobile application best practices.</li>
+                                    <li>Collaborated with cross-functional teams to organize technical events and hackathons, fostering a culture of innovation and continuous learning among 200+ student developers on campus.</li>
+                                </ul>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <h3 class="timeline-title" data-aos="fade-left"><i class="bi bi-mortarboard-fill me-2"></i>Education</h3>
+                    <div class="timeline">
+                        <article class="timeline-item" data-aos="fade-up">
+                            <div class="timeline-dot"><i class="bi bi-mortarboard-fill"></i></div>
+                            <div class="timeline-card">
+                                <div class="timeline-card-head">
+                                    <div>
+                                        <h4>B.Tech — Computer Science &amp; Engineering</h4>
+                                        <p class="timeline-org mono">VR Siddhartha Engineering College</p>
+                                        <div class="timeline-chips mono">
+                                            <span class="timeline-chip"><i class="bi bi-geo-alt-fill"></i>Vijayawada</span>
+                                            <span class="timeline-chip"><i class="bi bi-calendar3"></i>2021 — 2024</span>
+                                            <span class="score-pill mono"><i class="bi bi-award-fill"></i>CGPA: 8.1 / 10</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <ul class="timeline-points">
+                                    <li>Specialized in algorithms, data structures, and software engineering with a focus on enterprise application development.</li>
+                                    <li>Built full-stack academic projects using cloud technologies and agile methodologies.</li>
+                                </ul>
+                            </div>
+                        </article>
+                        <article class="timeline-item" data-aos="fade-up">
+                            <div class="timeline-dot"><i class="bi bi-pc-display"></i></div>
+                            <div class="timeline-card">
+                                <div class="timeline-card-head">
+                                    <div>
+                                        <h4>Diploma — Computer Engineering</h4>
+                                        <p class="timeline-org mono">A.A.N.M &amp; V.V.R.S.R Polytechnic College</p>
+                                        <div class="timeline-chips mono">
+                                            <span class="timeline-chip"><i class="bi bi-geo-alt-fill"></i>Gudlavalleru</span>
+                                            <span class="timeline-chip"><i class="bi bi-calendar3"></i>2018 — 2021</span>
+                                            <span class="score-pill mono"><i class="bi bi-award-fill"></i>Score: 90%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <ul class="timeline-points">
+                                    <li>Studied programming, networking, and system administration under the SBTET curriculum.</li>
+                                    <li>Gained practical experience in database management, web technologies, and hardware interfacing through hands-on lab projects.</li>
+                                </ul>
+                            </div>
+                        </article>
+                        <article class="timeline-item" data-aos="fade-up">
+                            <div class="timeline-dot"><i class="bi bi-backpack2"></i></div>
+                            <div class="timeline-card">
+                                <div class="timeline-card-head">
+                                    <div>
+                                        <h4>Secondary School Certificate (SSC)</h4>
+                                        <p class="timeline-org mono">V.M.C High School</p>
+                                        <div class="timeline-chips mono">
+                                            <span class="timeline-chip"><i class="bi bi-geo-alt-fill"></i>Vijayawada</span>
+                                            <span class="timeline-chip"><i class="bi bi-calendar3"></i>2018</span>
+                                            <span class="score-pill mono"><i class="bi bi-award-fill"></i>CGPA: 9.5 / 10</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <ul class="timeline-points">
+                                    <li>Secured top grades under the State Board of Secondary Education with strong performance in mathematics and sciences.</li>
+                                    <li>Consistently ranked among class toppers, earning recognition for academic excellence.</li>
+                                </ul>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+        <div class="container">
+            <p class="section-kicker mono text-center" data-aos="fade-up">// what I've built</p>
+            <h2 class="section-heading text-center" data-aos="fade-up">Projects</h2>
+            <p class="text-center muted-text mt-3 mb-5" data-aos="fade-up">A mix of mobile, web and machine-learning experiments.</p>
+
+            <div class="row justify-content-center mt-4 gy-4">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up">
+                    <div class="project-card card">
+                        <div class="banner-container">
+                            <img src="images/opt/missing-person.jpg" class="card-img-top banner" alt="Missing Person Finder app banner" loading="lazy" width="900" height="506">
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex align-items-start justify-content-between gap-2">
+                                <h3 class="project-title">Missing Person Finder</h3>
+                                <a href="https://github.com/vamsi061/Missing-Person" target="_blank" rel="noopener" class="icon-btn" aria-label="Missing Person Finder on GitHub"><i class="bi bi-github"></i></a>
+                            </div>
+                            <div class="stack-chips mono">
+                                <span>Android</span><span>Java</span><span>Mobile App</span>
+                            </div>
+                            <p class="project-desc">An Android application that helps communities report and locate missing persons quickly and efficiently.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-card card">
+                        <div class="banner-container">
+                            <img src="images/opt/twinglish.jpg" class="banner-top" class="card-img-top banner" alt="Twinglish Keyboard suggesting Telugu words while typing English" loading="lazy" width="900" height="984">
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex align-items-start justify-content-between gap-2">
+                                <h3 class="project-title">Twinglish Keyboard</h3>
+                                <a href="https://github.com/vamsi061/twinglish-keyboard" target="_blank" rel="noopener" class="icon-btn" aria-label="Twinglish Keyboard on GitHub"><i class="bi bi-github"></i></a>
+                            </div>
+                            <div class="stack-chips mono">
+                                <span>Android</span><span>Keyboard</span><span>Telugu · English</span>
+                            </div>
+                            <p class="project-desc">An open-source Android keyboard that suggests Telugu words as you type in English, enabling effortless bilingual conversations.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-card card">
+                        <div class="banner-container">
+                            <img src="images/opt/bus-ticket.jpg" class="card-img-top banner" alt="Bus Ticket Booking web app banner" loading="lazy" width="900" height="506">
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex align-items-start justify-content-between gap-2">
+                                <h3 class="project-title">Bus Ticket Booking</h3>
+                                <a href="https://github.com/vamsi061/HappyJourney" target="_blank" rel="noopener" class="icon-btn" aria-label="Bus Ticket Booking on GitHub"><i class="bi bi-github"></i></a>
+                            </div>
+                            <div class="stack-chips mono">
+                                <span>Django</span><span>HTML/CSS</span><span>Web App</span>
+                            </div>
+                            <p class="project-desc">A Django-based web application for searching buses and booking tickets through a streamlined reservation flow.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up">
+                    <div class="project-card card">
+                        <div class="banner-container">
+                            <img src="images/opt/mobile.jpg" class="card-img-top banner" alt="Mobile Price Classification project banner" loading="lazy" width="800" height="450">
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex align-items-start justify-content-between gap-2">
+                                <h3 class="project-title">Mobile Price Classification</h3>
+                                <a href="https://www.linkedin.com/posts/vamsi061_ybifoundation-ybif-internship-activity-6983456335828799489-M3_f" target="_blank" rel="noopener" class="icon-btn" aria-label="Mobile Price Classification write-up on LinkedIn"><i class="bi bi-box-arrow-up-right"></i></a>
+                            </div>
+                            <div class="stack-chips mono">
+                                <span>Machine Learning</span><span>Python</span><span>SVM · Random Forest</span>
+                            </div>
+                            <p class="project-desc">Predicts mobile price ranges using SVM, Random Forest and related algorithms — built during the YBI Foundation internship.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-card card">
+                        <div class="banner-container">
+                            <img src="images/opt/heart.jpg" class="card-img-top banner" alt="Heart Disease Prediction project banner" loading="lazy" width="800" height="450">
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex align-items-start justify-content-between gap-2">
+                                <h3 class="project-title">Heart Disease Prediction</h3>
+                                <a href="https://www.linkedin.com/posts/vamsi061_ybifoundation-ybif-internship-activity-6983455258614091776-G18C" target="_blank" rel="noopener" class="icon-btn" aria-label="Heart Disease Prediction write-up on LinkedIn"><i class="bi bi-box-arrow-up-right"></i></a>
+                            </div>
+                            <div class="stack-chips mono">
+                                <span>Machine Learning</span><span>KNN</span><span>Healthcare</span>
+                            </div>
+                            <p class="project-desc">Assesses heart-disease risk using the K-Nearest Neighbors algorithm on clinical parameters.</p>
+                        </div>
+                    </div>
+                </div>
+            
+        </div>
+    </section>
+
+    <!-- Certifications -->
+    <section id="certifications">
+        <div class="container">
+            <p class="section-kicker mono text-center" data-aos="fade-up">// proof of work</p>
+            <h2 class="section-heading text-center" data-aos="fade-up">Certifications &amp; Badges</h2>
+            <p class="text-center muted-text mt-3 mb-5" data-aos="fade-up">Validating my skills through recognized certifications.</p>
+
+            <!-- Credly Badges -->
+            <div class="badge-provider" data-aos="fade-up">
+                <div class="provider-head">
+                    <a href="https://www.credly.com/users/vamsi061" target="_blank" rel="noopener" class="provider-link">
+                        <img src="images/credly_logo.svg" alt="" class="provider-logo">
+                        <span class="provider-name">Credly <i class="bi bi-box-arrow-up-right"></i></span>
+                    </a>
+                    <span class="badge-count-pill mono"><i class="bi bi-patch-check-fill me-1"></i><span id="credly-count">…</span> badges</span>
+                </div>
+                <div class="badge-scroller-wrapper">
+                    <div class="badge-marquee">
+                        <div id="credly-badges" class="badge-track" role="list"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Google Badges -->
+            <div class="badge-provider" data-aos="fade-up" data-aos-delay="100">
+                <div class="provider-head">
+                    <a href="https://g.dev/vamsi061" target="_blank" rel="noopener" class="provider-link">
+                        <img src="images/google_dev_logo.svg" alt="" class="provider-logo">
+                        <span class="provider-name">Google Developers <i class="bi bi-box-arrow-up-right"></i></span>
+                    </a>
+                    <span class="badge-count-pill mono"><i class="bi bi-trophy-fill me-1"></i>10 badges</span>
+                </div>
+                <div class="badge-scroller-wrapper">
+                    <div class="badge-marquee">
+                        <div id="google-badges" class="badge-track" role="list">
+                            <div class="item" role="listitem"><a href="https://developers.google.com/profile/badges/community/gdsc/2023/member" target="_blank" rel="noopener"><img src="https://developers.google.com/static/profile/badges/community/gdsc/2023/member/badge.svg" alt="GDSC Member" loading="lazy"></a></div>
+                            <div class="item" role="listitem"><a href="https://developers.google.com/profile/badges/skillsboost/earned-badge" target="_blank" rel="noopener"><img src="https://developers.google.com/static/profile/badges/skillsboost/earned-badge/badge.svg" alt="Skills Boost Earned Badge" loading="lazy"></a></div>
+                            <div class="item" role="listitem"><a href="https://developers.google.com/profile/badges/events/cloud/next/2022/attendee" target="_blank" rel="noopener"><img src="https://developers.google.com/static/profile/badges/events/cloud/next/2022/attendee/badge.svg" alt="Cloud Next 2022 Attendee" loading="lazy"></a></div>
+                            <div class="item" role="listitem"><a href="https://developers.google.com/profile/badges/community/innovators/cloud/innovators_plus" target="_blank" rel="noopener"><img src="https://developers.google.com/static/profile/badges/community/innovators/cloud/innovators_plus/badge.svg" alt="Cloud Innovators Plus" loading="lazy"></a></div>
+                            <div class="item" role="listitem"><a href="https://developers.google.com/profile/badges/events/ai/gemini_api_competition" target="_blank" rel="noopener"><img src="https://developers.google.com/static/profile/badges/events/ai/gemini_api_competition/badge.svg" alt="Gemini API Competition" loading="lazy"></a></div>
+                            <div class="item" role="listitem"><a href="https://developers.google.com/profile/badges/playlists/android/android-basics-compose-unit-8-pathway-2" target="_blank" rel="noopener"><img src="https://developers.google.com/static/profile/badges/playlists/android/android-basics-compose-unit-8-pathway-2/badge.svg" alt="Android Basics Compose Unit 8 Pathway 2" loading="lazy"></a></div>
+                            <div class="item" role="listitem"><a href="https://developers.google.com/profile/badges/playlists/android/android-basics-compose-unit-8-pathway-1" target="_blank" rel="noopener"><img src="https://developers.google.com/static/profile/badges/playlists/android/android-basics-compose-unit-8-pathway-1/badge.svg" alt="Android Basics Compose Unit 8 Pathway 1" loading="lazy"></a></div>
+                            <div class="item" role="listitem"><a href="https://developers.google.com/profile/badges/playlists/android/android-basics-compose-unit-7-pathway-1" target="_blank" rel="noopener"><img src="https://developers.google.com/static/profile/badges/playlists/android/android-basics-compose-unit-7-pathway-1/badge.svg" alt="Android Basics Compose Unit 7 Pathway 1" loading="lazy"></a></div>
+                            <div class="item" role="listitem"><a href="https://developers.google.com/profile/badges/playlists/android/android-basics-compose-unit-6-pathway-3" target="_blank" rel="noopener"><img src="https://developers.google.com/static/profile/badges/playlists/android/android-basics-compose-unit-6-pathway-3/badge.svg" alt="Android Basics Compose Unit 6 Pathway 3" loading="lazy"></a></div>
+                            <div class="item" role="listitem"><a href="https://developers.google.com/profile/badges/playlists/android/android-basics-compose-unit-6-pathway-2" target="_blank" rel="noopener"><img src="https://developers.google.com/static/profile/badges/playlists/android/android-basics-compose-unit-6-pathway-2/badge.svg" alt="Android Basics Compose Unit 6 Pathway 2" loading="lazy"></a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Trailhead (Salesforce) Badges -->
+            <div class="badge-provider" data-aos="fade-up" data-aos-delay="200">
+                <div class="provider-head">
+                    <a href="https://www.salesforce.com/trailblazer/guruvamsikallepalli" target="_blank" rel="noopener" class="provider-link">
+                        <img src="images/salesforce-brand.svg" alt="" class="provider-logo">
+                        <span class="provider-name">Salesforce Trailhead <i class="bi bi-box-arrow-up-right"></i></span>
+                    </a>
+                    <span class="badge-count-pill mono"><i class="bi bi-stars me-1"></i><span id="trailblazer-count">…</span> badges</span>
+                </div>
+                <div class="badge-scroller-wrapper">
+                    <div class="badge-marquee">
+                        <div id="trailblazer-badges" class="badge-track" role="list"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <div class="container">
+            <p class="section-kicker mono text-center" data-aos="fade-up">// what's next?</p>
+            <h2 class="section-heading text-center" data-aos="fade-up">Get In Touch</h2>
+            <p class="text-center muted-text mt-3 mb-5" data-aos="fade-up">Interested in working together? My inbox is always open — I'll bring the coffee.</p>
+
+            <div class="row justify-content-center g-4">
+                <div class="col-lg-4" data-aos="fade-right">
+                    <div class="map-card">
+                        <iframe
+                            src="https://www.google.com/maps?q=Vijayawada%2C+Andhra+Pradesh+520010&output=embed"
+                            width="100%" height="100%" style="border:0"
+                            allowfullscreen loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Guru Vamsi's location — Vijayawada, Andhra Pradesh 520010, India"></iframe>
+                    </div>
+                </div>
+                <div class="col-lg-8" data-aos="fade-left">
+                    <div class="contact-form">
+                        <form action="https://api.web3forms.com/submit" method="POST">
+                            <input type="hidden" name="access_key" value="937a095a-09f4-4d69-ba42-c43fdc1727f6">
+                            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="name" name="name" placeholder="Name *" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="Email *" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <textarea style="resize: none;" class="form-control" id="message" name="message" rows="6" placeholder="Your message *" required></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <button type="submit" class="btn primary-bg-btn mt-2">Send Message <i class="bi bi-send"></i></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to top -->
+    <button class="btn" id="backToTopButton" aria-label="Back to top">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <!-- Accent color picker -->
+    <div class="theme-picker" id="themePicker">
+        <div class="theme-picker-panel" id="themePickerPanel" role="group" aria-label="Accent color options">
+            <span class="theme-picker-title mono">Accent color</span>
+            <div class="swatch-row">
+                <button class="swatch active" data-color="violet" style="--swatch: linear-gradient(135deg, #6366f1, #a855f7)" aria-label="Violet"></button>
+                <button class="swatch" data-color="ocean" style="--swatch: linear-gradient(135deg, #3b82f6, #06b6d4)" aria-label="Ocean"></button>
+                <button class="swatch" data-color="emerald" style="--swatch: linear-gradient(135deg, #10b981, #14b8a6)" aria-label="Emerald"></button>
+                <button class="swatch" data-color="sunset" style="--swatch: linear-gradient(135deg, #f97316, #ef4444)" aria-label="Sunset"></button>
+                <button class="swatch" data-color="rose" style="--swatch: linear-gradient(135deg, #ec4899, #d946ef)" aria-label="Rose"></button>
+            </div>
+        </div>
+        <button class="theme-picker-toggle" id="themePickerToggle" aria-label="Choose accent color" aria-expanded="false">
+            <i class="bi bi-palette-fill"></i>
+        </button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <a href="#home" class="footer-logo mono">&lt;<span>GuruVamsi</span>/&gt;</a>
+            <p class="footer-tagline">Engineered end-to-end with HTML, CSS &amp; JavaScript — fast, accessible and open by design.</p>
+            <div class="footer-socials">
+                <a href="https://github.com/vamsi061/" target="_blank" rel="noopener" aria-label="GitHub"><i class="bi bi-github"></i></a>
+                <a href="https://www.linkedin.com/in/vamsi061/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                <a href="https://twitter.com/guruvamsi061/" target="_blank" rel="noopener" aria-label="Twitter / X"><i class="bi bi-twitter-x"></i></a>
+                <a href="https://www.instagram.com/guruvamsi.vamsi.5/" target="_blank" rel="noopener" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            </div>
+            <p class="footer-copy mono">© <span id="year">2026</span> Guru Vamsi · All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- AI Chatbot -->
+    <div id="chatbot-root"></div>
+    <script src="js/chatbot-data.js?v=20260822q" defer></script>
+    <script src="js/chatbot.js?v=20260822q" defer></script>
+
+    <!-- JavaScript -->
+    <script src="js/bootstrap.min.js?v=20260822q" defer></script>
+    <script src="js/aos.js?v=20260822q" defer></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js" defer></script>
+    <script src="js/script.js?v=20260822q" defer></script>
+</body>
+</html>
